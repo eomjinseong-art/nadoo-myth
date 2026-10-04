@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #faf7f0;
+  --color-card: #ffffff;
+  --color-ink: #2b2620;
+  --color-muted: #6f665b;
+  --color-gold: #9a7624;
+  --color-gold-soft: #c9a54e;
+  --color-line: #e6dfd0;
+  --color-marble: #f2ede2;
+  --color-navy: #1f3b57;
+  --color-rome: #8c2f2b;
+  --font-sans: var(--font-noto-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-noto-serif), ui-serif, Georgia, serif;
+}
+
+html {
+  background: #faf7f0;
+}
+
+body {
+  background: #faf7f0;
+  color: #2b2620;
+}
+
+a {
+  text-underline-offset: 3px;
+}
+
+.meander {
+  height: 10px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0 6px,
+    rgba(154, 118, 36, 0.55) 6px 8px,
+    transparent 8px 14px
+  );
+  border-top: 2px solid rgba(154, 118, 36, 0.55);
+  border-bottom: 2px solid rgba(154, 118, 36, 0.55);
+}
+
+.prose-myth p {
+  line-height: 1.9;
+  margin-top: 0.9em;
+}
+
+.prose-myth p:first-child {
+  margin-top: 0;
+}
