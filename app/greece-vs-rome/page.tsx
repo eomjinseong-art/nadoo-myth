@@ -4,6 +4,7 @@ import { TagLegend } from "@/components/ClaimList";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHead } from "@/components/PageHead";
 import { godPairs, romanDeities } from "@/data/gvr";
+import { RomeStoriesCallout } from "@/components/RomeStoriesCallout";
 import { breadcrumbLd, itemListLd, jsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -37,6 +38,8 @@ export default function GvrPage() {
           모든 서술에 출처 유형을 붙였습니다. 학자들 사이에 의견이 갈리는 부분은 &lsquo;학설이 갈려요&rsquo; 상자에 따로 모았습니다.
         </p>
       </div>
+
+      <RomeStoriesCallout body="왕정·공화정·제정, 전쟁, 클레오파트라처럼 실제로 이어진 로마의 역사는 자매 사이트에 정리되어 있습니다." />
 
       <section className="mt-10">
         <h2 className="font-serif text-2xl text-ink">신 짝 비교 ({godPairs.length})</h2>

@@ -11,6 +11,10 @@ export const SITE_URL =
 export const MOVIE_CHECKLIST_URL =
   "https://movie-checklist-sigma.vercel.app/?utm_source=nadoo-myth&utm_medium=referral&utm_campaign=in-media";
 
+/** 자매 사이트. 신화가 아니라 로마의 역사(탄생·전쟁·클레오파트라·관련 영화). */
+export const ROME_STORIES_NAME = "로마이야기";
+export const ROME_STORIES_URL = "https://rome-stories.vercel.app";
+
 export const NAV = [
   { href: "/gods", label: "신과 인물" },
   { href: "/stories", label: "이야기" },

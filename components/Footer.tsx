@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CoupangBanner } from "@/components/CoupangBanner";
-import { BRAND_LINE, NAV, SITE_NAME } from "@/lib/site";
+import { BRAND_LINE, NAV, ROME_STORIES_NAME, ROME_STORIES_URL, SITE_NAME } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -17,6 +17,18 @@ export function Footer() {
           </p>
           <p>그림은 퍼블릭 도메인 작품만 쓰고, 출처(위키미디어 공용)를 함께 적습니다. 영화 제목과 상표는 각 권리자의 것입니다.</p>
         </div>
+        <p className="mt-4 text-xs leading-6">
+          <span className="text-muted">나두 자매 사이트</span>{" "}
+          <a
+            href={ROME_STORIES_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-rome underline decoration-line underline-offset-4 hover:text-gold"
+          >
+            {ROME_STORIES_NAME}
+          </a>
+          <span className="text-muted"> — 쉬운 로마 역사. 탄생·전쟁·클레오파트라·관련 영화.</span>
+        </p>
         <nav className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs">
           {NAV.map((item) => (
             <Link key={item.href} href={item.href} className="underline decoration-line underline-offset-4 hover:text-gold">
@@ -29,6 +41,14 @@ export function Footer() {
           <Link href="/sources" className="underline decoration-line underline-offset-4 hover:text-gold">
             원전과 기준
           </Link>
+          <a
+            href={ROME_STORIES_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-line underline-offset-4 hover:text-gold"
+          >
+            {ROME_STORIES_NAME}
+          </a>
         </nav>
       </div>
     </footer>
