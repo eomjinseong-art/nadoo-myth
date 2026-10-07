@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
+import { Portrait } from "@/components/Portrait";
 import { godPairs } from "@/data/gvr";
 import { people } from "@/data/people";
 import { stories } from "@/data/stories";
@@ -59,13 +60,23 @@ export default function Home() {
 
       <section className="mt-14">
         <h2 className="font-serif text-2xl text-ink">올림포스의 신들</h2>
-        <p className="mt-1 text-sm text-muted">한국어 이름 · 그리스어 · 로마 이름</p>
+        <p className="mt-1 text-sm text-muted">초상 삽화 · 한국어 이름 · 그리스어 · 로마 이름</p>
         <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
           {olympians.map((p) => (
-            <Link key={p.slug} href={`/gods/${p.slug}`} className="rounded-md border border-line bg-card p-3 hover:border-gold">
-              <p className="font-serif text-lg text-ink">{p.ko}</p>
-              <p className="text-sm text-gold">{p.greek}</p>
-              <p className="mt-1 text-xs text-muted">{p.roman?.split(" (")[0] ?? p.rom}</p>
+            <Link key={p.slug} href={`/gods/${p.slug}`} className="overflow-hidden rounded-md border border-line bg-card hover:border-gold">
+              {p.portrait ? (
+                <Portrait
+                  src={p.portrait}
+                  alt={p.portraitAlt ?? `${p.ko} 초상`}
+                  sizes="(min-width: 1024px) 180px, 45vw"
+                  className="aspect-[3/4] w-full bg-marble object-cover"
+                />
+              ) : null}
+              <span className="block p-3">
+                <span className="block font-serif text-lg text-ink">{p.ko}</span>
+                <span className="block text-sm text-gold">{p.greek}</span>
+                <span className="mt-1 block text-xs text-muted">{p.roman?.split(" (")[0] ?? p.rom}</span>
+              </span>
             </Link>
           ))}
         </div>

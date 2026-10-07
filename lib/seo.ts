@@ -93,11 +93,13 @@ export function articleLd({
   description,
   path,
   about,
+  image,
 }: {
   headline: string;
   description: string;
   path: string;
   about?: string[];
+  image?: string;
 }) {
   return {
     "@type": "Article",
@@ -108,6 +110,7 @@ export function articleLd({
     mainEntityOfPage: canonicalUrl(path),
     isPartOf: { "@type": "WebSite", name: SITE_NAME, url: SITE_URL },
     publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+    ...(image ? { image: canonicalUrl(image) } : {}),
     ...(about && about.length ? { about: about.map((name) => ({ "@type": "Thing", name })) } : {}),
   };
 }
