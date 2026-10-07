@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import { SisterSitesHeader } from "@/components/SisterSites";
 import { VisitorCounter } from "@/components/VisitorCounter";
-import { NAV, ROME_STORIES_NAME, ROME_STORIES_URL, SITE_NAME, SITE_NAME_EN } from "@/lib/site";
+import { NAV, SITE_NAME, SITE_NAME_EN } from "@/lib/site";
 
 export function Header() {
   const pathname = usePathname();
@@ -51,14 +52,6 @@ export function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-3">
-          <a
-            href={ROME_STORIES_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden items-center rounded-full border border-rome/40 px-3 py-1 text-xs text-rome hover:bg-rome/5 sm:inline-flex"
-          >
-            {ROME_STORIES_NAME}
-          </a>
           <form onSubmit={submit} className="hidden md:block" role="search">
             <input
               type="search"
@@ -81,6 +74,8 @@ export function Header() {
           </button>
         </div>
       </div>
+
+      <SisterSitesHeader />
 
       {open && (
         <div className="border-t border-line bg-bg px-4 py-3 lg:hidden">
@@ -105,15 +100,6 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <a
-              href={ROME_STORIES_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="col-span-2 rounded-md border border-rome/30 px-2 py-2 text-sm text-rome hover:bg-rome/5"
-              onClick={() => setOpen(false)}
-            >
-              {ROME_STORIES_NAME} →
-            </a>
           </nav>
         </div>
       )}

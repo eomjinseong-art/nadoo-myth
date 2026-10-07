@@ -39,7 +39,7 @@ export default function GvrPage() {
         </p>
       </div>
 
-      <RomeStoriesCallout body="왕정·공화정·제정, 전쟁, 클레오파트라처럼 실제로 이어진 로마의 역사는 자매 사이트에 정리되어 있습니다." />
+      <RomeStoriesCallout body="왕정·공화정·제정, 전쟁, 클레오파트라처럼 실제로 이어진 로마의 역사는 로마이야기에 있습니다. 폴리스와 전쟁의 그리스, 파라오의 이집트도 같은 나두 역사·신화에서 읽습니다." />
 
       <section className="mt-10">
         <h2 className="font-serif text-2xl text-ink">신 짝 비교 ({godPairs.length})</h2>

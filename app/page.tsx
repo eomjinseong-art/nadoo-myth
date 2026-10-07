@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
+import { SisterSitesHome } from "@/components/SisterSites";
 import { godPairs } from "@/data/gvr";
 import { people } from "@/data/people";
 import { stories } from "@/data/stories";
 import { words } from "@/data/words";
 import { jsonLd, pageMetadata, websiteLd } from "@/lib/seo";
-import { BRAND_LINE, ROME_STORIES_NAME, ROME_STORIES_URL, SITE_SUB, SITE_TAGLINE } from "@/lib/site";
+import { BRAND_LINE, SITE_SUB, SITE_TAGLINE } from "@/lib/site";
 
 export const metadata = pageMetadata({ title: "홈", description: `${SITE_TAGLINE}. ${SITE_SUB}`, path: "/" });
 
@@ -57,23 +58,7 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="mt-8" aria-label="자매 사이트">
-        <a
-          href={ROME_STORIES_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group flex flex-col gap-3 rounded-lg border border-rome/40 bg-card p-5 transition hover:border-rome hover:shadow-sm sm:flex-row sm:items-center sm:justify-between"
-        >
-          <div>
-            <p className="font-serif text-xs tracking-[0.18em] text-rome">자매 사이트</p>
-            <h2 className="mt-1 font-serif text-xl text-ink group-hover:text-rome">{ROME_STORIES_NAME}</h2>
-            <p className="mt-2 text-sm leading-6 text-muted">
-              로마의 탄생·전쟁·클레오파트라·관련 영화를 짧은 한국어로 읽습니다.
-            </p>
-          </div>
-          <span className="shrink-0 text-sm text-rome">{ROME_STORIES_NAME} 보기 →</span>
-        </a>
-      </section>
+      <SisterSitesHome />
 
       <section className="mt-14">
         <h2 className="font-serif text-2xl text-ink">올림포스의 신들</h2>
