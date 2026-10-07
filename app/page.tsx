@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
 import { Portrait } from "@/components/Portrait";
+import { SisterSitesHome } from "@/components/SisterSites";
 import { godPairs } from "@/data/gvr";
 import { people } from "@/data/people";
 import { stories } from "@/data/stories";
@@ -57,6 +58,8 @@ export default function Home() {
           </Link>
         ))}
       </section>
+
+      <SisterSitesHome />
 
       <section className="mt-14">
         <h2 className="font-serif text-2xl text-ink">올림포스의 신들</h2>

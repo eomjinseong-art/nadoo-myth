@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CoupangBanner } from "@/components/CoupangBanner";
+import { SisterSitesFooter } from "@/components/SisterSites";
 import { BRAND_LINE, NAV, SITE_NAME } from "@/lib/site";
 
 export function Footer() {
@@ -17,6 +18,7 @@ export function Footer() {
           </p>
           <p>그림은 퍼블릭 도메인 작품만 쓰고, 출처(위키미디어 공용)를 함께 적습니다. 영화 제목과 상표는 각 권리자의 것입니다.</p>
         </div>
+        <SisterSitesFooter />
         <nav className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs">
           {NAV.map((item) => (
             <Link key={item.href} href={item.href} className="underline decoration-line underline-offset-4 hover:text-gold">

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import { SisterSitesHeader } from "@/components/SisterSites";
 import { VisitorCounter } from "@/components/VisitorCounter";
 import { NAV, SITE_NAME, SITE_NAME_EN } from "@/lib/site";
 
@@ -73,6 +74,8 @@ export function Header() {
           </button>
         </div>
       </div>
+
+      <SisterSitesHeader />
 
       {open && (
         <div className="border-t border-line bg-bg px-4 py-3 lg:hidden">

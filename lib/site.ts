@@ -11,6 +11,34 @@ export const SITE_URL =
 export const MOVIE_CHECKLIST_URL =
   "https://movie-checklist-sigma.vercel.app/?utm_source=nadoo-myth&utm_medium=referral&utm_campaign=in-media";
 
+/** 자매 사이트 묶음. 신화 안내 옆에서 읽는 역사. */
+export const SISTER_GROUP_LABEL = "나두 역사·신화";
+
+/** 자매 사이트. 신화가 아니라 로마의 역사(탄생·전쟁·클레오파트라·관련 영화). */
+export const ROME_STORIES_NAME = "로마이야기";
+export const ROME_STORIES_URL = "https://rome-stories.vercel.app";
+
+export const SISTER_SITES = [
+  {
+    name: "그리스이야기",
+    href: "https://greece-stories.vercel.app",
+    blurb: "미케네에서 헬레니즘까지, 폴리스와 전쟁을 짧은 한국어로 읽습니다.",
+    note: "폴리스와 전쟁, 미케네에서 헬레니즘.",
+  },
+  {
+    name: ROME_STORIES_NAME,
+    href: ROME_STORIES_URL,
+    blurb: "로마의 탄생·전쟁·클레오파트라·관련 영화를 짧은 한국어로 읽습니다.",
+    note: "쉬운 로마 역사. 탄생·전쟁·클레오파트라·관련 영화.",
+  },
+  {
+    name: "이집트이야기",
+    href: "https://egypt-stories.vercel.app",
+    blurb: "선왕조에서 클레오파트라까지, 파라오와 나일강을 짧은 한국어로 읽습니다.",
+    note: "파라오와 나일강, 선왕조에서 클레오파트라.",
+  },
+] as const;
+
 export const NAV = [
   { href: "/gods", label: "신과 인물" },
   { href: "/stories", label: "이야기" },
