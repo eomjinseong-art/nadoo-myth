@@ -37,6 +37,12 @@ export const SISTER_SITES = [
     blurb: "선왕조에서 클레오파트라까지, 파라오와 나일강을 짧은 한국어로 읽습니다.",
     note: "파라오와 나일강, 선왕조에서 클레오파트라.",
   },
+  {
+    name: "나두연표",
+    href: "https://nadoo-timeline.vercel.app",
+    blurb: "세계사와 한반도를 같은 해에 나란히 놓은 비교 연표로 읽습니다.",
+    note: "세계사 vs 한반도, 같은 해 무슨 일이?",
+  },
 ] as const;
 
 export const NAV = [
