@@ -29,7 +29,7 @@ export default function HistoryPage() {
       <Breadcrumbs items={[{ href: "/", label: "홈" }, { href: "/greece-vs-rome", label: "그리스 vs 로마" }, { label: "합쳐진 과정" }]} />
       <PageHead kicker="HOW THEY MERGED" title="어떻게 합쳐졌을까" lead={lead} />
       <div className="mt-4"><TagLegend /></div>
-      <RomeStoriesCallout body="에트루리아와 로마식 해석으로 신이 이어진 뒤, 왕정에서 제정까지의 역사는 자매 사이트에서 이어서 읽습니다." />
+      <RomeStoriesCallout body="에트루리아와 로마식 해석으로 신이 이어진 뒤, 왕정에서 제정까지의 역사는 로마이야기에서 이어서 읽습니다. 그리스와 이집트의 역사도 나두 역사·신화에 모여 있습니다." />
 
       {mergeSections.map((s) => (
         <section key={s.title} className="mt-10">
