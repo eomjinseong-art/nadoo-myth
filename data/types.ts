@@ -32,6 +32,10 @@ export type Person = {
   sources: Source[];
   /** slug of /greece-vs-rome/[slug] comparison page */
   compare?: string;
+  /** Illustrated portrait, e.g. /portraits/zeus.webp */
+  portrait?: string;
+  /** Short Korean alt text for the portrait */
+  portraitAlt?: string;
 };
 
 export type Story = {

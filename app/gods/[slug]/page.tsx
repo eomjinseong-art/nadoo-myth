@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
+import { Portrait } from "@/components/Portrait";
 import { PersonRefList, SourceList, StoryRefList, Variants } from "@/components/Refs";
 import { pairBySlug } from "@/data/gvr";
 import { CATEGORY_LABEL, people, personBySlug } from "@/data/people";
@@ -43,17 +44,39 @@ export default async function PersonPage({ params }: { params: Promise<{ slug: s
             { name: "신과 인물", path: "/gods" },
             { name: p.ko, path },
           ]),
-          articleLd({ headline: `${p.ko} (${p.greek})`, description: p.intro, path, about: [p.ko, p.rom, ...(p.roman ? [p.roman] : [])] }),
+          articleLd({
+            headline: `${p.ko} (${p.greek})`,
+            description: p.intro,
+            path,
+            about: [p.ko, p.rom, ...(p.roman ? [p.roman] : [])],
+            image: p.portrait,
+          }),
         ])}
       />
       <Breadcrumbs items={[{ href: "/", label: "홈" }, { href: "/gods", label: "신과 인물" }, { label: p.ko }]} />
-      <header className="mt-4">
-        <p className="text-xs tracking-[0.2em] text-gold">{CATEGORY_LABEL[p.category]}</p>
-        <h1 className="mt-1 font-serif text-4xl text-ink">{p.ko}</h1>
-        <p className="mt-2 text-lg text-gold">
-          <span lang="grc">{p.greek}</span> <span className="text-muted">· {p.rom}</span>
-        </p>
-        <p className="mt-3 text-base leading-8 text-ink">{p.intro}</p>
+      <header className="mt-4 flex flex-col gap-5 sm:flex-row sm:items-start">
+        {p.portrait ? (
+          <figure className="mx-auto w-44 shrink-0 sm:mx-0 sm:w-52">
+            <div className="overflow-hidden rounded-md border border-line bg-marble">
+              <Portrait
+                src={p.portrait}
+                alt={p.portraitAlt ?? `${p.ko} 초상`}
+                sizes="(min-width: 640px) 208px, 176px"
+                priority
+                className="aspect-[3/4] w-full object-cover"
+              />
+            </div>
+            <figcaption className="mt-1.5 text-center text-[11px] leading-4 text-muted">상징을 모아 그린 초상</figcaption>
+          </figure>
+        ) : null}
+        <div className="min-w-0">
+          <p className="text-xs tracking-[0.2em] text-gold">{CATEGORY_LABEL[p.category]}</p>
+          <h1 className="mt-1 font-serif text-4xl text-ink">{p.ko}</h1>
+          <p className="mt-2 text-lg text-gold">
+            <span lang="grc">{p.greek}</span> <span className="text-muted">· {p.rom}</span>
+          </p>
+          <p className="mt-3 text-base leading-8 text-ink">{p.intro}</p>
+        </div>
       </header>
 
       <dl className="mt-6 grid gap-x-6 gap-y-3 rounded-md border border-line bg-card p-5 text-sm sm:grid-cols-[8rem_1fr]">

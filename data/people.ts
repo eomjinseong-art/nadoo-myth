@@ -2,9 +2,14 @@ import { monsters, nymphs } from "./people-creatures";
 import { gods } from "./people-gods";
 import { mortals } from "./people-mortals";
 import { heroes, otherGods } from "./people-others";
+import { portraits } from "./portraits";
 import type { Person, PersonCategory } from "./types";
 
-export const people: Person[] = [...gods, ...otherGods, ...heroes, ...mortals, ...nymphs, ...monsters];
+export const people: Person[] = [...gods, ...otherGods, ...heroes, ...mortals, ...nymphs, ...monsters].map((person) => {
+  const art = portraits[person.slug];
+  if (!art) throw new Error(`Missing portrait for ${person.slug}`);
+  return { ...person, portrait: art.src, portraitAlt: art.alt };
+});
 
 export const personBySlug = new Map(people.map((p) => [p.slug, p]));
 
