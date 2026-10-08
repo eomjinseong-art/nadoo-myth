@@ -140,6 +140,9 @@ export const otherGods: Person[] = [
       { work: AP, ref: "3권 10장 3–4절" },
       { work: "리비우스 『로마사』", ref: "10권 47장, 요약 11권" },
     ],
+    elsewhere: [
+      { href: "https://egypt-stories.vercel.app/rulers/djoser", label: "이집트이야기 · 조세르와 임호테프" },
+    ],
   },
   {
     slug: "nemesis",
@@ -320,6 +323,9 @@ export const heroes: Person[] = [
       { work: "스타티우스 『아킬레이스』", ref: "1권" },
       { work: APE, ref: "5권 3절" },
     ],
+    elsewhere: [
+      { href: "https://greece-stories.vercel.app/family-tree?tree=trojan&focus=achilles", label: "그리스이야기 트로이 가계 · 아킬레우스" },
+    ],
   },
   {
     slug: "odysseus",
@@ -380,6 +386,9 @@ export const heroes: Person[] = [
     intro:
       "트로이를 지키는 맏왕자이자 가장 믿음직한 장수입니다. 동생 파리스가 일으킨 전쟁이지만 도시와 가족을 위해 앞장서 싸웠습니다. 『일리아스』에서 아내와 어린 아들과 작별하는 장면은 서사시에서 가장 인간적인 순간으로 꼽힙니다. 아킬레우스에게 죽은 뒤 시신이 끌려다니다가, 아버지 프리아모스가 몸소 찾아가 몸값을 치르고 돌려받았습니다.",
     sources: [{ work: IL, ref: "6권 390–502행, 22권, 24권" }],
+    elsewhere: [
+      { href: "https://greece-stories.vercel.app/family-tree?tree=trojan&focus=hector", label: "그리스이야기 트로이 가계 · 헥토르" },
+    ],
   },
   {
     slug: "aineias",
@@ -403,6 +412,9 @@ export const heroes: Person[] = [
       { work: "리비우스 『로마사』", ref: "1권 1–3장" },
     ],
     compare: "aphrodite-venus",
+    elsewhere: [
+      { href: "https://rome-stories.vercel.app/family-tree?tree=legend&focus=aeneas", label: "로마 건국 가계의 아이네이아스" },
+    ],
   },
   {
     slug: "bellerophon",

@@ -6,6 +6,7 @@ const FAS = "오비디우스 『축제력(파스티)』";
 export const romanDeities: RomanDeity[] = [
   {
     slug: "janus",
+    elsewhere: [{ href: "https://rome-stories.vercel.app/myth-links#janus", label: "로마이야기에서 야누스 더 보기" }],
     ko: "야누스",
     latin: "Ianus",
     role: "시작과 끝, 문과 통로, 전쟁과 평화의 문",
@@ -22,6 +23,7 @@ export const romanDeities: RomanDeity[] = [
   },
   {
     slug: "quirinus",
+    elsewhere: [{ href: "https://rome-stories.vercel.app/myth-links#quirinus", label: "로마이야기에서 퀴리누스 더 보기" }],
     ko: "퀴리누스",
     latin: "Quirinus",
     role: "로마 시민 공동체의 신, 신이 된 로물루스",
@@ -40,6 +42,7 @@ export const romanDeities: RomanDeity[] = [
   },
   {
     slug: "lares",
+    elsewhere: [{ href: "https://rome-stories.vercel.app/myth-links#lares", label: "로마이야기에서 라레스 더 보기" }],
     ko: "라레스",
     latin: "Lares",
     role: "집과 땅, 갈림길을 지키는 수호령",
@@ -55,6 +58,7 @@ export const romanDeities: RomanDeity[] = [
   },
   {
     slug: "penates",
+    elsewhere: [{ href: "https://rome-stories.vercel.app/myth-links#penates", label: "로마이야기에서 페나테스 더 보기" }],
     ko: "페나테스",
     latin: "Di Penates",
     role: "집의 식량 창고와 가족의 존속을 지키는 신들",

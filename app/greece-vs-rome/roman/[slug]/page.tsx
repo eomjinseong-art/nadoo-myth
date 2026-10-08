@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ClaimList, TagLegend } from "@/components/ClaimList";
+import { ElsewhereBox } from "@/components/ElsewhereBox";
 import { JsonLd } from "@/components/JsonLd";
 import { romanBySlug, romanDeities } from "@/data/gvr";
 import { articleLd, breadcrumbLd, jsonLd, pageMetadata } from "@/lib/seo";
@@ -63,6 +64,7 @@ export default async function RomanPage({ params }: { params: Promise<{ slug: st
           <div className="mt-2"><ClaimList claims={r.greekNote} /></div>
         </section>
       ) : null}
+      <ElsewhereBox links={r.elsewhere} />
       {r.disputed?.length ? (
         <section className="mt-6 rounded-md border border-gold/40 bg-gold/5 p-4">
           <h2 className="font-serif text-base text-gold">학설이 갈려요</h2>

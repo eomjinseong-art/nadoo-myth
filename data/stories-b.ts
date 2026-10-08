@@ -184,6 +184,12 @@ export const storiesB: Story[] = [
       { work: "아이스킬로스 『아가멤논』" },
       { work: "에우리피데스 『아울리스의 이피게네이아』" },
     ],
+    elsewhere: [
+      { href: "https://greece-stories.vercel.app/people/homer", label: "그리스이야기 · 호메로스" },
+      { href: "https://greece-stories.vercel.app/family-tree?tree=trojan&focus=achilles", label: "트로이 전쟁 가계도 · 아킬레우스" },
+      { href: "https://nadoo-timeline.vercel.app/events/trojan-war", label: "연표의 트로이 전쟁" },
+      { href: "https://iliad-stories.vercel.app", label: "일리아스이야기에서 51일 자세히" },
+    ],
   },
   {
     slug: "trojan-horse",
@@ -229,6 +235,10 @@ export const storiesB: Story[] = [
       { work: OD },
       { work: APE, ref: "7권" },
     ],
+    elsewhere: [
+      { href: "https://greece-stories.vercel.app/people/homer", label: "그리스이야기 · 호메로스" },
+      { href: "https://greece-stories.vercel.app/movies#odyssey-2026", label: "그리스이야기 영화 『오디세이』" },
+    ],
   },
   {
     slug: "aeneid",
@@ -252,6 +262,10 @@ export const storiesB: Story[] = [
       { work: "리비우스 『로마사』", ref: "1권 1–7장" },
       { work: IL, ref: "20권 293–308행" },
       { work: "에트루리아 출토 흑회식 도기·베이이 테라코타상(고고학)", ref: "기원전 6–5세기" },
+    ],
+    elsewhere: [
+      { href: "https://rome-stories.vercel.app/rulers/romulus", label: "로마이야기 · 로물루스" },
+      { href: "https://rome-stories.vercel.app/family-tree?tree=legend&focus=aeneas", label: "로마 가계도의 아이네이아스" },
     ],
   },
   {

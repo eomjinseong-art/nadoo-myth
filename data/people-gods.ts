@@ -422,6 +422,9 @@ export const gods: Person[] = [
       { work: AP, ref: "1권 1–2장" },
     ],
     compare: "zeus-jupiter",
+    elsewhere: [
+      { href: "https://egypt-stories.vercel.app/gods#amun", label: "이집트 신화의 아문" },
+    ],
   },
   {
     slug: "hera",
@@ -684,6 +687,9 @@ export const gods: Person[] = [
       { work: TH, ref: "938–939행" },
     ],
     compare: "hermes-mercury",
+    elsewhere: [
+      { href: "https://egypt-stories.vercel.app/gods#thoth", label: "이집트 신화의 토트" },
+    ],
   },
   {
     slug: "dionysos",

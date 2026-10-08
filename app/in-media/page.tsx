@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ElsewhereBox } from "@/components/ElsewhereBox";
 import { JsonLd } from "@/components/JsonLd";
+import { OtherSiteFilms } from "@/components/SisterSites";
 import { PageHead } from "@/components/PageHead";
 import { PersonRefList, StoryRefList } from "@/components/Refs";
 import { constellations, films, paintings } from "@/data/media";
@@ -50,9 +52,11 @@ export default function InMediaPage() {
                   {f.checklist} 출연작 체크리스트 보기 ↗
                 </a>
               ) : null}
+              {f.elsewhere?.length ? <ElsewhereBox links={f.elsewhere} /> : null}
             </div>
           ))}
         </div>
+        <OtherSiteFilms />
       </section>
 
       <section id="paintings" className="mt-14 scroll-mt-28">
