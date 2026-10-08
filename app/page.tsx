@@ -14,7 +14,7 @@ export const metadata = pageMetadata({ title: "홈", description: `${SITE_TAGLIN
 const MENUS = [
   { href: "/gods", title: "신과 인물", desc: "올림포스 신, 티탄, 영웅, 님프, 괴물. 그리스어·로마 이름과 가족관계까지." },
   { href: "/stories", title: "이야기", desc: "카오스에서 오디세이아까지, 대략의 시간 순서로 읽는 신화." },
-  { href: "/family-tree", title: "족보", desc: "카오스부터 영웅까지 한눈에 보는 신들의 가계도." },
+  { href: "/family-tree", title: "가족관계도", desc: "Family Tree. 제우스는 크로노스와 레아의 아들. 세대별로 보는 신들의 가계도." },
   { href: "/words", title: "신화 속 단어", desc: "나르시시즘, 패닉, 나이키, 시리얼… 어원을 정확하게." },
   { href: "/in-media", title: "작품 속 신화", desc: "영화, 명화, 별자리 속에 숨은 신화." },
   { href: "/greece-vs-rome", title: "그리스 vs 로마", desc: "제우스와 유피테르는 같은 신일까? 숭배와 신전, 축제로 비교." },
