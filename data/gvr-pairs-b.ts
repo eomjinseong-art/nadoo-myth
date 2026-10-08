@@ -9,6 +9,7 @@ const CIC = "키케로 『신들의 본성에 관하여』";
 export const pairsB: GodPair[] = [
   {
     slug: "aphrodite-venus",
+    elsewhere: [{ href: "https://rome-stories.vercel.app/myth-links#aphrodite-venus", label: "로마이야기에서 베누스 더 보기" }],
     greekSlug: "aphrodite",
     greekKo: "아프로디테",
     romanKo: "베누스(비너스)",
@@ -58,6 +59,7 @@ export const pairsB: GodPair[] = [
   },
   {
     slug: "hephaistos-vulcan",
+    elsewhere: [{ href: "https://rome-stories.vercel.app/myth-links#hephaistos-vulcan", label: "로마이야기에서 불카누스 더 보기" }],
     greekSlug: "hephaistos",
     greekKo: "헤파이스토스",
     romanKo: "불카누스(벌컨)",
@@ -99,6 +101,7 @@ export const pairsB: GodPair[] = [
   },
   {
     slug: "hermes-mercury",
+    elsewhere: [{ href: "https://rome-stories.vercel.app/myth-links#hermes-mercury", label: "로마이야기에서 메르쿠리우스 더 보기" }],
     greekSlug: "hermes",
     greekKo: "헤르메스",
     romanKo: "메르쿠리우스(머큐리)",
@@ -139,6 +142,7 @@ export const pairsB: GodPair[] = [
   },
   {
     slug: "dionysos-bacchus",
+    elsewhere: [{ href: "https://rome-stories.vercel.app/myth-links#dionysos-bacchus", label: "로마이야기에서 바쿠스 더 보기" }],
     greekSlug: "dionysos",
     greekKo: "디오니소스",
     romanKo: "바쿠스 · 리베르",
@@ -187,6 +191,7 @@ export const pairsB: GodPair[] = [
   },
   {
     slug: "hestia-vesta",
+    elsewhere: [{ href: "https://rome-stories.vercel.app/myth-links#hestia-vesta", label: "로마이야기에서 베스타 더 보기" }],
     greekSlug: "hestia",
     greekKo: "헤스티아",
     romanKo: "베스타",
@@ -389,6 +394,7 @@ export const pairsB: GodPair[] = [
   },
   {
     slug: "herakles-hercules",
+    elsewhere: [{ href: "https://rome-stories.vercel.app/myth-links#herakles-hercules", label: "로마이야기에서 헤르쿨레스 더 보기" }],
     greekSlug: "herakles",
     greekKo: "헤라클레스",
     romanKo: "헤르쿨레스(허큘리스)",

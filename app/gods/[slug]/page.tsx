@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ElsewhereBox } from "@/components/ElsewhereBox";
 import { JsonLd } from "@/components/JsonLd";
 import { Portrait } from "@/components/Portrait";
 import { PersonRefList, SourceList, StoryRefList, Variants } from "@/components/Refs";
@@ -163,6 +164,7 @@ export default async function PersonPage({ params }: { params: Promise<{ slug: s
         </section>
       ) : null}
 
+      <ElsewhereBox links={p.elsewhere} />
       <SourceList sources={p.sources} />
       <p className="mt-6 text-sm">
         <Link href={familyTreeHref(p.slug)} className="text-gold">가족관계도에서 보기 →</Link>

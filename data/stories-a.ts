@@ -155,6 +155,9 @@ export const storiesA: Story[] = [
       { work: AP, ref: "1권 7장 2절" },
       { work: MET, ref: "1권 253–415행" },
     ],
+    elsewhere: [
+      { href: "https://the-chosen-korean.vercel.app/bible-books/genesis", label: "성경 창세기의 홍수와 비교해서 읽기" },
+    ],
   },
   {
     slug: "persephone",

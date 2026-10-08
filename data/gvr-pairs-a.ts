@@ -10,6 +10,7 @@ const DH = "할리카르나소스의 디오니시오스 『로마 고대사』";
 export const pairsA: GodPair[] = [
   {
     slug: "zeus-jupiter",
+    elsewhere: [{ href: "https://rome-stories.vercel.app/myth-links#zeus-jupiter", label: "로마이야기에서 유피테르 더 보기" }],
     greekSlug: "zeus",
     greekKo: "제우스",
     romanKo: "유피테르(주피터)",
@@ -68,6 +69,7 @@ export const pairsA: GodPair[] = [
   },
   {
     slug: "hera-juno",
+    elsewhere: [{ href: "https://rome-stories.vercel.app/myth-links#hera-juno", label: "로마이야기에서 유노 더 보기" }],
     greekSlug: "hera",
     greekKo: "헤라",
     romanKo: "유노(주노)",
@@ -121,6 +123,7 @@ export const pairsA: GodPair[] = [
   },
   {
     slug: "poseidon-neptune",
+    elsewhere: [{ href: "https://rome-stories.vercel.app/myth-links#poseidon-neptune", label: "로마이야기에서 넵투누스 더 보기" }],
     greekSlug: "poseidon",
     greekKo: "포세이돈",
     romanKo: "넵투누스(넵튠)",
@@ -208,6 +211,7 @@ export const pairsA: GodPair[] = [
   },
   {
     slug: "athena-minerva",
+    elsewhere: [{ href: "https://rome-stories.vercel.app/myth-links#athena-minerva", label: "로마이야기에서 미네르바 더 보기" }],
     greekSlug: "athena",
     greekKo: "아테나",
     romanKo: "미네르바",
@@ -252,6 +256,7 @@ export const pairsA: GodPair[] = [
   },
   {
     slug: "apollo",
+    elsewhere: [{ href: "https://rome-stories.vercel.app/myth-links#apollo", label: "로마이야기에서 아폴로 더 보기" }],
     greekSlug: "apollo",
     greekKo: "아폴론",
     romanKo: "아폴로",
@@ -297,6 +302,7 @@ export const pairsA: GodPair[] = [
   },
   {
     slug: "artemis-diana",
+    elsewhere: [{ href: "https://rome-stories.vercel.app/myth-links#artemis-diana", label: "로마이야기에서 디아나 더 보기" }],
     greekSlug: "artemis",
     greekKo: "아르테미스",
     romanKo: "디아나(다이애나)",
@@ -342,6 +348,7 @@ export const pairsA: GodPair[] = [
   },
   {
     slug: "ares-mars",
+    elsewhere: [{ href: "https://rome-stories.vercel.app/myth-links#ares-mars", label: "로마이야기에서 마르스 더 보기" }],
     greekSlug: "ares",
     greekKo: "아레스",
     romanKo: "마르스",

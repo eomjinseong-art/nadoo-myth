@@ -1,11 +1,18 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ClaimList, TagLegend } from "@/components/ClaimList";
+import { ElsewhereBox } from "@/components/ElsewhereBox";
+import type { ElsewhereLink } from "@/data/types";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHead } from "@/components/PageHead";
 import { etruscanTable, mergeSections, timeline } from "@/data/gvr-history";
 import { RomeStoriesCallout } from "@/components/RomeStoriesCallout";
 import { articleLd, breadcrumbLd, jsonLd, pageMetadata } from "@/lib/seo";
+
+const historyElsewhere: ElsewhereLink[] = [
+  { href: "https://rome-stories.vercel.app/origins", label: "로마이야기에서 로마의 기원 읽기" },
+  { href: "https://greece-stories.vercel.app/origins#hellenistic", label: "그리스이야기에서 헬레니즘 시대 읽기" },
+];
 
 const path = "/greece-vs-rome/history";
 const lead =
@@ -30,6 +37,7 @@ export default function HistoryPage() {
       <PageHead kicker="HOW THEY MERGED" title="어떻게 합쳐졌을까" lead={lead} />
       <div className="mt-4"><TagLegend /></div>
       <RomeStoriesCallout body="에트루리아와 로마식 해석으로 신이 이어진 뒤, 왕정에서 제정까지의 역사는 로마이야기에서 이어서 읽습니다. 그리스와 이집트의 역사도 나두 역사·신화에 모여 있습니다." />
+      <ElsewhereBox links={historyElsewhere} />
 
       {mergeSections.map((s) => (
         <section key={s.title} className="mt-10">

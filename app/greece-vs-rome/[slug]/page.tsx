@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ClaimList, TagLegend } from "@/components/ClaimList";
+import { ElsewhereBox } from "@/components/ElsewhereBox";
 import { JsonLd } from "@/components/JsonLd";
 import { godPairs, pairBySlug } from "@/data/gvr";
 import { personBySlug } from "@/data/people";
@@ -85,6 +86,8 @@ export default async function PairPage({ params }: { params: Promise<{ slug: str
         <h2 className="font-serif text-xl text-rome">로마는 무엇이 달랐나</h2>
         <div className="mt-3"><ClaimList claims={p.difference} /></div>
       </section>
+
+      <ElsewhereBox links={p.elsewhere} />
 
       {p.disputed?.length ? (
         <section className="mt-6 rounded-md border border-gold/40 bg-gold/5 p-5">

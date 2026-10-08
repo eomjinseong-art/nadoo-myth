@@ -1,3 +1,5 @@
+import type { ElsewhereLink } from "./types";
+
 export type Film = {
   slug: string;
   titleKo: string;
@@ -11,6 +13,8 @@ export type Film = {
   note: string;
   /** actor in the movie checklist site */
   checklist?: string;
+  /** Same film on a sister site. */
+  elsewhere?: ElsewhereLink[];
 };
 
 export const films: Film[] = [
@@ -37,6 +41,10 @@ export const films: Film[] = [
     people: ["achilleus", "hektor", "paris", "helene", "agamemnon", "odysseus", "aineias", "thetis"],
     stories: ["trojan-war", "trojan-horse"],
     note: "원전과 다른 점: 10년 전쟁이 몇 주로 압축되고, 메넬라오스와 아가멤논이 트로이에서 죽는 등 결말이 다릅니다. 『일리아스』에는 없는 목마 장면도 넣었습니다.",
+    elsewhere: [
+      { href: "https://greece-stories.vercel.app/movies#troy", label: "그리스이야기 영화 『트로이』" },
+      { href: "https://iliad-stories.vercel.app", label: "일리아스이야기에서 원전 읽기" },
+    ],
   },
   {
     slug: "clash-of-the-titans-2010",
@@ -112,6 +120,9 @@ export const films: Film[] = [
     people: ["odysseus", "penelope", "telemachos", "athena", "kirke", "kalypso", "polyphemos"],
     stories: ["odyssey"],
     note: "맷 데이먼이 오디세우스를 맡았고 톰 홀랜드, 앤 해서웨이, 젠데이아 등이 출연했으며 2026년 7월 개봉했습니다. 배역과 각색 범위는 공식 정보를 기준으로 확인하세요.",
+    elsewhere: [
+      { href: "https://greece-stories.vercel.app/movies#odyssey-2026", label: "그리스이야기 영화 『오디세이』" },
+    ],
   },
   {
     slug: "jason-and-the-argonauts-1963",
@@ -136,6 +147,9 @@ export const films: Film[] = [
     people: ["odysseus", "penelope", "polyphemos", "seirenes"],
     stories: ["odyssey"],
     note: "주인공 이름이 율리시스(오디세우스의 라틴식 이름)이고, 외눈 거인과 세이렌을 떠올리게 하는 인물들이 나옵니다.",
+    elsewhere: [
+      { href: "https://greece-stories.vercel.app/movies#o-brother", label: "그리스이야기 영화 『오 형제여 어디 있는가』" },
+    ],
   },
   {
     slug: "wonder-woman-2017",

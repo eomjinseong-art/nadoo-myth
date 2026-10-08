@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ElsewhereBox } from "@/components/ElsewhereBox";
+import { IliadCallout } from "@/components/IliadCallout";
 import { JsonLd } from "@/components/JsonLd";
 import { PersonRefList, SourceList, Variants } from "@/components/Refs";
 import { films, paintings } from "@/data/media";
@@ -48,6 +50,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
         <h1 className="mt-1 font-serif text-3xl text-ink sm:text-4xl">{s.title}</h1>
         <p className="mt-3 text-lg leading-8 text-muted">{s.lead}</p>
       </header>
+      {s.slug === "trojan-war" ? <IliadCallout /> : null}
       <div className="prose-myth mt-6">
         {s.body.map((para, i) => (
           <p key={i}>{para}</p>
@@ -60,6 +63,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
         </p>
       </section>
       <Variants items={s.variants} />
+      <ElsewhereBox links={s.elsewhere} />
       {relPaintings.length || relFilms.length ? (
         <section className="mt-8">
           <h2 className="font-serif text-xl text-ink">작품 속 이 이야기</h2>

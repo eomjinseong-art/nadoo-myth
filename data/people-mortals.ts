@@ -28,6 +28,9 @@ export const mortals: Person[] = [
       { work: APE, ref: "3권 1–5절" },
       { work: AP, ref: "3권 12장 5절" },
     ],
+    elsewhere: [
+      { href: "https://greece-stories.vercel.app/family-tree?tree=trojan&focus=paris", label: "그리스이야기 트로이 가계 · 파리스" },
+    ],
   },
   {
     slug: "helene",
@@ -54,6 +57,9 @@ export const mortals: Person[] = [
       { work: "에우리피데스 『헬레네』" },
       { work: AP, ref: "3권 10장 7–9절" },
     ],
+    elsewhere: [
+      { href: "https://greece-stories.vercel.app/family-tree?tree=trojan&focus=helen", label: "그리스이야기 트로이 가계 · 헬레네" },
+    ],
   },
   {
     slug: "agamemnon",
@@ -74,6 +80,9 @@ export const mortals: Person[] = [
       { work: IL, ref: "1권" },
       { work: OD, ref: "11권 405–434행" },
       { work: "아이스킬로스 『아가멤논』" },
+    ],
+    elsewhere: [
+      { href: "https://greece-stories.vercel.app/family-tree?tree=trojan&focus=agamemnon", label: "그리스이야기 트로이 가계 · 아가멤논" },
     ],
   },
   {

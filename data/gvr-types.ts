@@ -1,3 +1,5 @@
+import type { ElsewhereLink } from "./types";
+
 export type SourceTag = "greek" | "roman" | "arch" | "modern";
 
 export const SOURCE_TAG_LABEL: Record<SourceTag, string> = {
@@ -23,6 +25,8 @@ export type GodPair = {
   rows: PairRow[];
   difference: Claim[];
   disputed?: Claim[];
+  /** Same comparison on a sister site. */
+  elsewhere?: ElsewhereLink[];
 };
 
 export type RomanDeity = {
@@ -35,4 +39,6 @@ export type RomanDeity = {
   festival?: string;
   greekNote?: Claim[];
   disputed?: Claim[];
+  /** Same deity on a sister site. */
+  elsewhere?: ElsewhereLink[];
 };

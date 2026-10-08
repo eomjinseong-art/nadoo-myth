@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FamilyTreeView } from "@/components/FamilyTreeView";
+import { OtherFamilyTrees } from "@/components/SisterSites";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHead } from "@/components/PageHead";
 import { DISPUTES, NAME_NOTES, TREE, relationsOf } from "@/data/family-tree";
@@ -47,6 +48,7 @@ export default function FamilyTreePage() {
         lead="헤시오도스 『신통기』를 기본으로, 누가 누구의 자녀인지 세대별로 그린 가계도입니다. 예를 들어 제우스는 크로노스와 레아의 아들이고, 아테나는 제우스와 메티스의 딸입니다. 칸을 누르면 부모·배우자·자녀·형제가 밝아집니다."
       />
       <FamilyTreeView />
+      <OtherFamilyTrees />
 
       <section className="mt-12">
         <h2 className="font-serif text-2xl text-ink">글로 읽는 가족관계</h2>

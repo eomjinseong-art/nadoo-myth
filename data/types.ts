@@ -1,5 +1,8 @@
 export type Source = { work: string; ref?: string };
 
+/** A link to the same topic on a sister site. */
+export type ElsewhereLink = { href: string; label: string };
+
 export type PersonCategory =
   | "primordial"
   | "titan"
@@ -36,6 +39,8 @@ export type Person = {
   portrait?: string;
   /** Short Korean alt text for the portrait */
   portraitAlt?: string;
+  /** Same topic on a sister site. */
+  elsewhere?: ElsewhereLink[];
 };
 
 export type Story = {
@@ -48,6 +53,8 @@ export type Story = {
   characters: string[];
   variants?: string[];
   sources: Source[];
+  /** Same topic on a sister site. */
+  elsewhere?: ElsewhereLink[];
 };
 
 export type Word = {

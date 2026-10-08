@@ -275,6 +275,9 @@ export const monsters: Person[] = [
       { work: AP, ref: "1권 6장 3절" },
       { work: "핀다로스 『피티아 송가』", ref: "1번 15–28행" },
     ],
+    elsewhere: [
+      { href: "https://egypt-stories.vercel.app/gods#seth", label: "이집트 신화의 세트" },
+    ],
   },
   {
     slug: "sphinx",
@@ -299,6 +302,9 @@ export const monsters: Person[] = [
       { work: TH, ref: "326–327행" },
       { work: AP, ref: "3권 5장 8절" },
       { work: "소포클레스 『오이디푸스 왕』" },
+    ],
+    elsewhere: [
+      { href: "https://egypt-stories.vercel.app/monuments", label: "이집트 기념물 속 스핑크스" },
     ],
   },
   {
