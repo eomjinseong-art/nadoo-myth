@@ -43,9 +43,13 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
+                aria-label={"en" in item && item.en ? `${item.label} ${item.en}` : item.label}
                 className={active ? "font-semibold text-gold" : "text-muted hover:text-ink"}
               >
-                {item.label}
+                <span className="block leading-tight">{item.label}</span>
+                {"en" in item && item.en ? (
+                  <span className="mt-0.5 block text-[9px] font-normal leading-none tracking-wide text-gold">{item.en}</span>
+                ) : null}
               </Link>
             );
           })}
@@ -94,10 +98,12 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
+                aria-label={"en" in item && item.en ? `${item.label} ${item.en}` : item.label}
                 className="rounded-md px-2 py-2 text-sm text-ink hover:bg-gold/10"
                 onClick={() => setOpen(false)}
               >
-                {item.label}
+                <span className="block">{item.label}</span>
+                {"en" in item && item.en ? <span className="block text-[10px] text-gold">{item.en}</span> : null}
               </Link>
             ))}
           </nav>

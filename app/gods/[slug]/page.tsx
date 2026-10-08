@@ -8,6 +8,7 @@ import { pairBySlug } from "@/data/gvr";
 import { CATEGORY_LABEL, people, personBySlug } from "@/data/people";
 import { paintings } from "@/data/media";
 import { words } from "@/data/words";
+import { familyTreeHref } from "@/data/family-tree";
 import { articleLd, breadcrumbLd, jsonLd, pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -164,7 +165,7 @@ export default async function PersonPage({ params }: { params: Promise<{ slug: s
 
       <SourceList sources={p.sources} />
       <p className="mt-6 text-sm">
-        <Link href="/family-tree" className="text-gold">족보에서 보기 →</Link>
+        <Link href={familyTreeHref(p.slug)} className="text-gold">가족관계도에서 보기 →</Link>
       </p>
     </article>
   );

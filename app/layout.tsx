@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: { default: `${SITE_NAME} · 그리스 로마 신화`, template: `%s · ${SITE_NAME}` },
   description,
   applicationName: SITE_NAME,
-  keywords: ["그리스 로마 신화", "그리스 신화", "로마 신화", "올림포스 12신", "제우스", "신화 족보", "나두신화"],
+  keywords: ["그리스 로마 신화", "그리스 신화", "로마 신화", "올림포스 12신", "제우스", "가족관계도", "가계도", "신화 족보", "나두신화"],
   alternates: { canonical: SITE_URL },
   openGraph: {
     type: "website",

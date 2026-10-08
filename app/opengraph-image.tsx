@@ -20,7 +20,7 @@ async function loadFont(text: string) {
 export default async function OpenGraphImage() {
   const title = "나두신화";
   const sub = "그리스·로마 신화를 한국어로 쉽고 정확하게";
-  const font = await loadFont(title + sub + "신과 인물 이야기 족보 단어 작품 그리스 vs 로마 ·");
+  const font = await loadFont(title + sub + "신과 인물 이야기 가족관계도 단어 작품 그리스 vs 로마 ·");
   return new ImageResponse(
     (
       <div
@@ -41,7 +41,7 @@ export default async function OpenGraphImage() {
         <div style={{ color: "#9a7624", fontSize: 30, letterSpacing: 8 }}>NADOO MYTHOLOGY</div>
         <div style={{ marginTop: 20, fontSize: 96 }}>{title}</div>
         <div style={{ marginTop: 18, fontSize: 36, color: "#6f665b" }}>{sub}</div>
-        <div style={{ marginTop: 36, fontSize: 28, color: "#1f3b57" }}>신과 인물 · 이야기 · 족보 · 단어 · 작품 · 그리스 vs 로마</div>
+        <div style={{ marginTop: 36, fontSize: 28, color: "#1f3b57" }}>신과 인물 · 이야기 · 가족관계도 · 단어 · 작품 · 그리스 vs 로마</div>
       </div>
     ),
     { ...size, ...(font ? { fonts: [{ name: "NotoSerifKR", data: font, weight: 700 as const, style: "normal" as const }] } : {}) },
