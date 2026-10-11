@@ -20,7 +20,7 @@ const MENUS = [
   { href: "/webtoon", title: "웹툰", desc: "프로메테우스의 불부터 키클롭스까지. 치비 그림, 3줄 요약, 세 문제." },
   { href: "/family-tree", title: "가족관계도", desc: "Family Tree. 제우스는 크로노스와 레아의 아들. 세대별로 보는 신들의 가계도." },
   { href: "/words", title: "신화 속 단어", desc: "나르시시즘, 패닉, 나이키, 시리얼… 어원을 정확하게." },
-  { href: "/in-media", title: "작품 속 신화", desc: "영화, 명화, 별자리 속에 숨은 신화." },
+  { href: "/in-media", title: "작품 속 신화", desc: "영화, 명화, 그리고 별자리 성도." },
   { href: "/greece-vs-rome", title: "그리스 vs 로마", desc: "제우스와 유피테르는 같은 신일까? 숭배와 신전, 축제로 비교." },
 ];
 

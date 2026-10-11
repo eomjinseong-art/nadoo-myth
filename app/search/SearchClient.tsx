@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
+import { constellations } from "@/data/constellations";
 import { godPairs, romanDeities } from "@/data/gvr";
 import { people } from "@/data/people";
 import { stories } from "@/data/stories";
@@ -25,6 +26,7 @@ const INDEX: Item[] = [
   ...words.map((w) => ({ kind: "단어", title: w.word, sub: w.en, href: `/words/${w.slug}`, hay: norm([w.word, w.en, w.slug].join(" ")) })),
   ...godPairs.map((g) => ({ kind: "그리스 vs 로마", title: `${g.greekKo} vs ${g.romanKo}`, sub: g.romanLatin, href: `/greece-vs-rome/${g.slug}`, hay: norm([g.greekKo, g.romanKo, g.romanLatin, g.slug].join(" ")) })),
   ...romanDeities.map((r) => ({ kind: "로마 고유의 신", title: r.ko, sub: `${r.latin} · ${r.role}`, href: `/greece-vs-rome/roman/${r.slug}`, hay: norm([r.ko, r.latin, r.role, r.slug].join(" ")) })),
+  ...constellations.map((c) => ({ kind: "별자리", title: c.ko, sub: c.latin, href: `/constellations/${c.slug}`, hay: norm([c.ko, c.latin, c.search, c.slug].join(" ")) })),
 ];
 
 export function SearchClient() {

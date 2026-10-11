@@ -48,3 +48,52 @@ a {
 .prose-myth p:first-child {
   margin-top: 0;
 }
+
+.starchart-figure {
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.starchart-figure path {
+  fill: none;
+  stroke: #f6e0b0;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.starchart-figure.is-on {
+  opacity: 1;
+}
+
+.starchart-figure.is-on path {
+  animation: starchart-draw 0.85s ease forwards;
+}
+
+@keyframes starchart-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .starchart-figure,
+  .starchart-figure.is-on path {
+    animation: none;
+    transition: none;
+  }
+
+  .starchart-figure.is-on path {
+    stroke-dashoffset: 0;
+  }
+}
+
+.skymap a {
+  cursor: pointer;
+}
+
+.skymap a:hover text {
+  fill: #f0d48a;
+}
