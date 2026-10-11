@@ -98,8 +98,8 @@ export const perseus: Episode = {
         { id: "zeus", pose: "proud", x: 286, y: 230, scale: 0.55, ground: false },
       ],
       props: [
-        { kind: "cloud", x: 286, y: 255, scale: 0.7 },
-        { kind: "gold-rain", x: 170, y: 210, scale: 1.35, front: true },
+        { kind: "cloud", x: 286, y: 248, scale: 0.7 },
+        { kind: "gold-rain", x: 150, y: 188, scale: 1.05 },
       ],
       bubbles: [
         { type: "narration", text: "왕은 딸을 청동 방에 가뒀습니다. 제우스는 황금 비가 되어 왔고, 페르세우스가 태어났습니다." },
@@ -152,12 +152,12 @@ export const perseus: Episode = {
       bg: "cave",
       alt: "동굴 바위 위에 그라이아이 세 자매가 있고, 페르세우스가 커다란 눈알을 들고 길을 묻는다.",
       cast: [
-        { id: "graeae", pose: "angry", x: 205, y: 332, scale: 0.8, ground: false },
-        { id: "perseus", pose: "sneak", x: 118, y: feet, scale: 0.92, look: "ready" },
+        { id: "graeae", pose: "angry", x: 228, y: 268, scale: 0.58, ground: false },
+        { id: "perseus", pose: "point", x: 78, y: feet, scale: 0.86, look: "ready" },
       ],
       props: [
-        { kind: "ledge", x: 210, y: 348, scale: 1.15 },
-        { kind: "shared-eye", x: 150, y: 300, scale: 1.15, front: true },
+        { kind: "ledge", x: 228, y: 286, scale: 0.95 },
+        { kind: "shared-eye", x: 158, y: 348, scale: 1.05, front: true },
       ],
       bubbles: [
         { type: "narration", text: "그라이아이 세 자매는 눈 하나와 이 하나를 돌려 썼습니다." },
@@ -185,12 +185,12 @@ export const perseus: Episode = {
       alt: "화면 한쪽에 하얀 펑 구름과 자루, 날개 달린 말 페가수스가 튀어나오고 페르세우스가 놀란다. 벤 모습은 없다.",
       sfx: "펑!",
       cast: [
-        { id: "perseus", pose: "surprised", x: 112, y: feet, scale: 1.02, look: "ready" },
-        { id: "pegasus", pose: "fly", x: 268, y: 268, scale: 0.72, ground: false },
+        { id: "perseus", pose: "surprised", x: 92, y: feet, scale: 0.96, look: "ready" },
+        { id: "pegasus", pose: "fly", x: 292, y: 268, scale: 0.68, ground: false },
       ],
       props: [
-        { kind: "poof", x: 250, y: 310, scale: 1.05, front: true },
-        { kind: "kibisis", x: 168, y: 360, scale: 1.15, front: true },
+        { kind: "poof", x: 188, y: 300, scale: 0.85 },
+        { kind: "kibisis", x: 168, y: 392, scale: 1.05, front: true },
       ],
       bubbles: [
         { type: "narration", text: "베는 순간은 화면 밖입니다. 자루가 무거워지고, 천마가 뛰어나왔습니다." },
@@ -272,7 +272,7 @@ export const perseus: Episode = {
         { id: "athena", pose: "proud", x: 92, y: feet, scale: 1, look: "aegis" },
         { id: "perseus", pose: "happy", x: 210, y: feet, scale: 0.92, look: "ready" },
         { id: "andromeda", pose: "happy", x: 305, y: 436, scale: 0.78 },
-        { id: "pegasus", pose: "fly", x: 250, y: 250, scale: 0.58, ground: false },
+        { id: "pegasus", pose: "fly", x: 318, y: 236, scale: 0.46, ground: false },
       ],
       bubbles: [
         { type: "narration", text: "그 얼굴은 아테나의 아이기스에 붙습니다. 이지스라는 말도 여기에서 왔습니다." },

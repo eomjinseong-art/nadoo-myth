@@ -115,10 +115,10 @@ export const pandora: Episode = {
       bg: "palace",
       alt: "신전 기둥 사이. 아테나, 아프로디테, 헤르메스가 판도라 곁에 선물을 얹는다.",
       cast: [
-        { id: "athena", pose: "offer", x: 68, y: feet, scale: 0.7 },
-        { id: "aphrodite", pose: "happy", x: 145, y: 442, scale: 0.7 },
-        { id: "hermes", pose: "sly", x: 308, y: feet, scale: 0.68 },
-        { id: "pandora", pose: "curious", x: 214, y: feet, scale: 0.86 },
+        { id: "athena", pose: "offer", x: 52, y: feet, scale: 0.6 },
+        { id: "aphrodite", pose: "happy", x: 128, y: feet, scale: 0.6 },
+        { id: "pandora", pose: "curious", x: 214, y: feet, scale: 0.74 },
+        { id: "hermes", pose: "sly", x: 308, y: feet, scale: 0.58 },
       ],
       bubbles: [
         { type: "narration", text: "옷과 길쌈, 매력, 달콤한 말. 모두(pan)의 선물(dōra), 그래서 판도라." },
@@ -130,12 +130,12 @@ export const pandora: Episode = {
       bg: "meadow",
       alt: "언덕 위 프로메테우스가 경고하고, 아래에서는 헤르메스가 판도라를 에피메테우스에게 데려간다.",
       cast: [
-        { id: "prometheus", pose: "point", x: 78, y: 300, scale: 0.72, ground: false },
-        { id: "hermes", pose: "sly", x: 250, y: 400, scale: 0.62 },
-        { id: "pandora", pose: "idle", x: 188, y: feet, scale: 0.78 },
-        { id: "epimetheus", pose: "oops", x: 300, y: feet, scale: 0.82 },
+        { id: "prometheus", pose: "point", x: 72, y: 292, scale: 0.58, ground: false },
+        { id: "hermes", pose: "sly", x: 132, y: feet, scale: 0.58 },
+        { id: "pandora", pose: "idle", x: 214, y: feet, scale: 0.62 },
+        { id: "epimetheus", pose: "oops", x: 300, y: feet, scale: 0.62 },
       ],
-      props: [{ kind: "cloud", x: 78, y: 318, scale: 0.55 }],
+      props: [{ kind: "cloud", x: 72, y: 304, scale: 0.62 }],
       bubbles: [
         { type: "narration", text: "헤르메스가 판도라를 동생에게 데려갑니다. 형은 이미 경고했습니다." },
         { type: "speech", speaker: "프로메테우스", text: "제우스 선물은 받지 마!", align: "start" },
