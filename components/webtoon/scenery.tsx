@@ -215,6 +215,108 @@ function Sky({ uid }: { uid: string }) {
   );
 }
 
+function Forest({ uid }: { uid: string }) {
+  return (
+    <g>
+      <defs>
+        <linearGradient id={`${uid}-forest`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#c5e4f6" />
+          <stop offset="45%" stopColor="#d7ecb8" />
+          <stop offset="100%" stopColor="#8fb56e" />
+        </linearGradient>
+      </defs>
+      <rect width="360" height="480" fill={`url(#${uid}-forest)`} />
+      {[[40, 250], [110, 220], [250, 230], [320, 260]].map(([x, y]) => (
+        <g key={`${x}-${y}`}>
+          <rect x={x - 6} y={y} width="12" height="150" fill="#6b5344" />
+          <circle cx={x} cy={y} r="36" fill="#5f8f4e" />
+          <circle cx={x - 16} cy={y + 10} r="22" fill="#7ea86a" />
+        </g>
+      ))}
+      <ellipse cx="180" cy="470" rx="200" ry="40" fill="#7ea35a" />
+    </g>
+  );
+}
+
+function Night({ uid }: { uid: string }) {
+  return (
+    <g>
+      <defs>
+        <linearGradient id={`${uid}-night`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#1b2744" />
+          <stop offset="70%" stopColor="#31486a" />
+          <stop offset="100%" stopColor="#6a5a48" />
+        </linearGradient>
+      </defs>
+      <rect width="360" height="480" fill={`url(#${uid}-night)`} />
+      <circle cx="78" cy="70" r="18" fill="#f6e7c1" />
+      {[[40, 40], [120, 90], [180, 36], [240, 80], [300, 48], [330, 110]].map(([x, y]) => (
+        <circle key={`${x}-${y}`} cx={x} cy={y} r="1.5" fill="#fff6d4" />
+      ))}
+      <path d="M20 300 H80 V250 H140 V300 H220 V230 H300 V300 H340 V460 H20 Z" fill="#2a2438" />
+      <rect y="430" width="360" height="50" fill="#3a3228" />
+    </g>
+  );
+}
+
+function Labyrinth({ uid }: { uid: string }) {
+  return (
+    <g>
+      <defs>
+        <linearGradient id={`${uid}-maze`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#f6e7c4" />
+          <stop offset="100%" stopColor="#e7d3a8" />
+        </linearGradient>
+      </defs>
+      <rect width="360" height="480" fill={`url(#${uid}-maze)`} />
+      <g stroke="#c4a574" strokeWidth="10" fill="none">
+        <path d="M20 40 H340 V200 H60 V120 H260 V160" />
+        <path d="M20 240 H200 V320 H80 V400 H340" />
+        <path d="M240 240 H340 V400" />
+      </g>
+      <rect y="440" width="360" height="40" fill="#e2cfa4" />
+    </g>
+  );
+}
+
+function River({ uid }: { uid: string }) {
+  return (
+    <g>
+      <defs>
+        <linearGradient id={`${uid}-river`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#d7ecf6" />
+          <stop offset="55%" stopColor="#c5e4c0" />
+          <stop offset="100%" stopColor="#7eb4d8" />
+        </linearGradient>
+      </defs>
+      <rect width="360" height="480" fill={`url(#${uid}-river)`} />
+      <path d="M0 300 Q80 260 160 310 T360 280 V480 H0 Z" fill="#7eb4d8" />
+      <path d="M0 330 Q100 300 180 340 T360 320" fill="none" stroke="#f7f4ee" strokeWidth="3" opacity="0.7" />
+      <ellipse cx="70" cy="250" rx="40" ry="16" fill="#9fc57e" />
+      <ellipse cx="300" cy="240" rx="50" ry="18" fill="#b7d39a" />
+    </g>
+  );
+}
+
+function Underworld({ uid }: { uid: string }) {
+  return (
+    <g>
+      <defs>
+        <linearGradient id={`${uid}-under`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#241c33" />
+          <stop offset="100%" stopColor="#3a3050" />
+        </linearGradient>
+      </defs>
+      <rect width="360" height="480" fill={`url(#${uid}-under)`} />
+      <ellipse cx="180" cy="470" rx="180" ry="50" fill="#4a4060" />
+      {[40, 100, 180, 250, 320].map((x) => (
+        <rect key={x} x={x} y="360" width="16" height="80" fill="#2a2438" />
+      ))}
+      <circle cx="300" cy="60" r="10" fill="#f0d36a" opacity="0.7" />
+    </g>
+  );
+}
+
 export function Background({ name, uid }: { name: BgName; uid: string }) {
   switch (name) {
     case "olympus":
@@ -237,6 +339,16 @@ export function Background({ name, uid }: { name: BgName; uid: string }) {
       return <Arena uid={uid} />;
     case "sky":
       return <Sky uid={uid} />;
+    case "forest":
+      return <Forest uid={uid} />;
+    case "night":
+      return <Night uid={uid} />;
+    case "labyrinth":
+      return <Labyrinth uid={uid} />;
+    case "river":
+      return <River uid={uid} />;
+    case "underworld":
+      return <Underworld uid={uid} />;
     default: {
       const neverBg: never = name;
       throw new Error(neverBg);
@@ -416,6 +528,300 @@ function Ledge() {
   return <path d="M-90 6 Q-40 -16 10 -6 Q60 -20 100 0 L110 22 H-100 Z" fill="#3a3350" stroke="#2a2438" strokeWidth="1.5" />;
 }
 
+function Fennel() {
+  return (
+    <g>
+      <path d="M0 20 V-16" stroke="#7ea86a" strokeWidth="4" strokeLinecap="round" />
+      <path d="M0 -16 Q-8 -28 0 -36 Q8 -28 0 -16" fill="#e07a32" stroke={INK} strokeWidth="1" />
+    </g>
+  );
+}
+
+function Eagle() {
+  return (
+    <g>
+      <ellipse cx="0" cy="4" rx="16" ry="10" fill="#6a5344" stroke={INK} strokeWidth="1.4" />
+      <path d="M-8 0 Q-28 -16 -18 6" fill="#8a7058" stroke={INK} strokeWidth="1.2" />
+      <path d="M8 0 Q28 -16 18 6" fill="#8a7058" stroke={INK} strokeWidth="1.2" />
+      <circle cx="10" cy="-2" r="6" fill="#c4a574" stroke={INK} />
+      <path d="M14 -2 L22 -4" stroke="#e6c36a" strokeWidth="1.6" />
+      <circle cx="12" cy="-3" r="1" fill={INK} />
+    </g>
+  );
+}
+
+function Chains() {
+  return (
+    <g fill="none" stroke="#8a9096" strokeWidth="3">
+      <ellipse cx="-16" cy="0" rx="8" ry="6" />
+      <ellipse cx="0" cy="0" rx="8" ry="6" />
+      <ellipse cx="16" cy="0" rx="8" ry="6" />
+    </g>
+  );
+}
+
+function WoodenHorse() {
+  return (
+    <g fill="#c4894a" stroke={INK} strokeWidth="1.8">
+      <rect x="-34" y="-8" width="68" height="36" rx="4" />
+      <path d="M18 -8 Q34 -36 28 -8" />
+      <rect x="-28" y="28" width="6" height="16" />
+      <rect x="-8" y="28" width="6" height="16" />
+      <rect x="10" y="28" width="6" height="16" />
+      <rect x="24" y="28" width="6" height="16" />
+      <circle cx="30" cy="-24" r="3" fill="#3a3228" />
+    </g>
+  );
+}
+
+function Sheep() {
+  return (
+    <g>
+      <ellipse cx="0" cy="4" rx="28" ry="16" fill="#f7f4ee" stroke={INK} strokeWidth="1.6" />
+      <circle cx="22" cy="-2" r="8" fill="#f7f4ee" stroke={INK} />
+      <circle cx="24" cy="-3" r="1.2" fill={INK} />
+      <path d="M-16 16 V26 M-4 18 V28 M8 16 V26" stroke="#3a3228" strokeWidth="3" strokeLinecap="round" />
+    </g>
+  );
+}
+
+function Wine() {
+  return (
+    <g>
+      <path d="M-10 0 Q-12 16 0 18 Q12 16 10 0 Z" fill="#6a2a6a" stroke={INK} strokeWidth="1.4" />
+      <path d="M0 18 V28" stroke={INK} strokeWidth="1.6" />
+      <path d="M-8 28 H8" stroke={INK} strokeWidth="1.6" />
+    </g>
+  );
+}
+
+function Deer() {
+  return (
+    <g fill="#e0b15a" stroke={INK} strokeWidth="1.4">
+      <ellipse cx="0" cy="6" rx="22" ry="12" />
+      <circle cx="18" cy="-4" r="7" />
+      <path d="M14 -10 L10 -22 M18 -10 L22 -22" stroke="#c4a574" fill="none" />
+      <circle cx="20" cy="-5" r="1" fill={INK} stroke="none" />
+    </g>
+  );
+}
+
+function Boar() {
+  return (
+    <g fill="#c47b8a" stroke={INK} strokeWidth="1.4">
+      <ellipse cx="0" cy="4" rx="24" ry="14" />
+      <circle cx="20" cy="-2" r="8" />
+      <path d="M24 2 L30 6" stroke="#f7f4ee" strokeWidth="2" />
+      <circle cx="22" cy="-4" r="1" fill={INK} stroke="none" />
+    </g>
+  );
+}
+
+function Bull() {
+  return (
+    <g fill="#d7d0c8" stroke={INK} strokeWidth="1.4">
+      <ellipse cx="0" cy="6" rx="26" ry="14" />
+      <circle cx="20" cy="-2" r="9" />
+      <path d="M12 -8 Q8 -18 16 -10 M24 -8 Q30 -18 22 -10" fill="#e6c98a" />
+      <circle cx="23" cy="-2" r="1.2" fill={INK} stroke="none" />
+    </g>
+  );
+}
+
+function Mare() {
+  return (
+    <g fill="#8a6232" stroke={INK} strokeWidth="1.4">
+      <ellipse cx="0" cy="4" rx="26" ry="12" />
+      <path d="M20 0 Q34 -16 24 8" />
+      <circle cx="28" cy="-8" r="1" fill={INK} stroke="none" />
+      <path d="M-16 12 V22 M-4 14 V24 M10 12 V22" stroke="#3a3228" strokeWidth="3" fill="none" />
+    </g>
+  );
+}
+
+function Birds() {
+  return (
+    <g fill="none" stroke="#3a3228" strokeWidth="1.6" strokeLinecap="round">
+      <path d="M-20 0 Q-10 -8 0 0 Q10 -8 20 0" />
+      <path d="M-6 -12 Q2 -18 10 -12 Q18 -18 26 -12" />
+      <path d="M8 10 Q16 4 24 10 Q32 4 40 10" />
+    </g>
+  );
+}
+
+function Cattle() {
+  return (
+    <g fill="#8c2f2b" stroke={INK} strokeWidth="1.3">
+      <ellipse cx="-16" cy="4" rx="16" ry="10" />
+      <ellipse cx="16" cy="6" rx="16" ry="10" />
+      <circle cx="-4" cy="-4" r="5" />
+      <circle cx="28" cy="-2" r="5" />
+    </g>
+  );
+}
+
+function Apples() {
+  return (
+    <g>
+      <circle cx="-8" cy="2" r="8" fill="#c23b4a" stroke={INK} />
+      <circle cx="8" cy="0" r="8" fill="#e07a32" stroke={INK} />
+      <path d="M0 -6 Q4 -14 0 -16" stroke="#3f8f4e" fill="none" strokeWidth="1.4" />
+    </g>
+  );
+}
+
+function Thread() {
+  return (
+    <g>
+      <circle r="10" fill="#f7f4ee" stroke={INK} strokeWidth="1.4" />
+      <path d="M8 4 Q24 10 18 28" stroke="#c23b4a" strokeWidth="1.6" fill="none" />
+    </g>
+  );
+}
+
+function Sail() {
+  return (
+    <g>
+      <path d="M0 24 V-28" stroke="#6b5344" strokeWidth="3" />
+      <path d="M2 -24 L28 0 L2 8 Z" fill="#1f3b57" stroke={INK} strokeWidth="1.3" />
+    </g>
+  );
+}
+
+function SunDisc() {
+  return (
+    <g>
+      <circle r="16" fill="#f2d36a" stroke={INK} strokeWidth="1.4" />
+      {[0, 45, 90, 135].map((deg) => (
+        <path key={deg} d="M0 -20 V-28" stroke="#f0d36a" strokeWidth="3" strokeLinecap="round" transform={`rotate(${deg})`} />
+      ))}
+    </g>
+  );
+}
+
+function Pond() {
+  return (
+    <g>
+      <ellipse rx="54" ry="22" fill="#7eb4d8" stroke="#1f6f8a" strokeWidth="1.6" />
+      <ellipse cy="-2" rx="16" ry="8" fill="#f6d0b4" opacity="0.85" />
+      <circle cx="-6" cy="-4" r="1.2" fill={INK} />
+      <circle cx="2" cy="-4" r="1.2" fill={INK} />
+      <path d="M-4 0 Q-2 2 0 0" stroke={INK} fill="none" />
+    </g>
+  );
+}
+
+function NarcissusFlower() {
+  return (
+    <g>
+      <circle r="8" fill="#fff" stroke={INK} />
+      <circle r="3" fill="#f0d36a" />
+      <path d="M0 8 V22" stroke="#3f8f4e" strokeWidth="1.6" />
+    </g>
+  );
+}
+
+function GoldBread() {
+  return (
+    <g>
+      <ellipse rx="16" ry="8" fill="#f0d36a" stroke={INK} strokeWidth="1.4" />
+      <path d="M-8 -1 H8" stroke="#b8923a" strokeWidth="1" />
+    </g>
+  );
+}
+
+function Reeds() {
+  return (
+    <g stroke="#7ea86a" strokeWidth="2" fill="none">
+      <path d="M-10 16 V-16" />
+      <path d="M0 18 V-20" />
+      <path d="M10 16 V-12" />
+      <circle cy="-18" r="3" fill="#c5e4c0" />
+    </g>
+  );
+}
+
+function Splash() {
+  return (
+    <g fill="#d7f1f8" stroke="#1f6f8a" strokeWidth="1.4">
+      <ellipse cy="8" rx="28" ry="8" />
+      <path d="M-8 6 Q-4 -18 0 6 Q4 -14 8 6" />
+    </g>
+  );
+}
+
+function Feathers() {
+  return (
+    <g fill="#fbfaf6" stroke={INK} strokeWidth="1.2">
+      <ellipse cx="-10" cy="0" rx="4" ry="10" transform="rotate(-20)" />
+      <ellipse cx="4" cy="6" rx="3" ry="8" transform="rotate(15)" />
+      <ellipse cx="14" cy="-4" rx="3" ry="9" transform="rotate(30)" />
+    </g>
+  );
+}
+
+function Rattle() {
+  return (
+    <g>
+      <circle cy="-6" r="8" fill="#e6c36a" stroke={INK} strokeWidth="1.3" />
+      <path d="M0 2 V16" stroke="#8a5a32" strokeWidth="2" />
+    </g>
+  );
+}
+
+function Belt() {
+  return (
+    <g>
+      <rect x="-18" y="-6" width="36" height="12" rx="3" fill="#f0d36a" stroke={INK} strokeWidth="1.4" />
+      <circle r="3" fill="#8c2f2b" />
+    </g>
+  );
+}
+
+function Pillars() {
+  return (
+    <g fill="#e7d3a8" stroke={INK} strokeWidth="1.3">
+      <rect x="-28" y="-20" width="10" height="40" />
+      <rect x="8" y="-20" width="10" height="40" />
+      <rect x="-34" y="-26" width="58" height="8" />
+    </g>
+  );
+}
+
+function SkyOrb() {
+  return (
+    <g>
+      <circle r="22" fill="#7eb4d8" stroke={INK} strokeWidth="1.4" />
+      <circle cx="-6" cy="-4" r="6" fill="#fff" opacity="0.8" />
+      <path d="M8 6 Q14 2 12 10" fill="#d7ecb8" />
+    </g>
+  );
+}
+
+function Torch() {
+  return (
+    <g>
+      <rect x="-2" y="0" width="4" height="18" fill="#8a5a32" />
+      <path d="M0 0 Q-6 -10 0 -16 Q6 -10 0 0" fill="#e07a32" stroke={INK} strokeWidth="1" />
+    </g>
+  );
+}
+
+function Geryon() {
+  return (
+    <g>
+      {[ -22, 0, 22 ].map((x) => (
+        <g key={x} transform={`translate(${x} 0)`}>
+          <circle cy="-8" r="10" fill="#e8b892" stroke={INK} strokeWidth="1.2" />
+          <circle cx="-3" cy="-9" r="1" fill={INK} />
+          <circle cx="3" cy="-9" r="1" fill={INK} />
+          <path d="M-8 6 H8 V18 H-8 Z" fill="#5c6a78" stroke={INK} />
+        </g>
+      ))}
+    </g>
+  );
+}
+
 function Prop({ kind }: { kind: PropKind }) {
   switch (kind) {
     case "pithos":
@@ -452,6 +858,62 @@ function Prop({ kind }: { kind: PropKind }) {
       return <CloudShape x={0} y={0} />;
     case "ledge":
       return <Ledge />;
+    case "fennel":
+      return <Fennel />;
+    case "eagle":
+      return <Eagle />;
+    case "chains":
+      return <Chains />;
+    case "wooden-horse":
+      return <WoodenHorse />;
+    case "sheep":
+      return <Sheep />;
+    case "wine":
+      return <Wine />;
+    case "deer":
+      return <Deer />;
+    case "boar":
+      return <Boar />;
+    case "bull":
+      return <Bull />;
+    case "mare":
+      return <Mare />;
+    case "birds":
+      return <Birds />;
+    case "cattle":
+      return <Cattle />;
+    case "apples":
+      return <Apples />;
+    case "thread":
+      return <Thread />;
+    case "sail":
+      return <Sail />;
+    case "sun":
+      return <SunDisc />;
+    case "pond":
+      return <Pond />;
+    case "narcissus":
+      return <NarcissusFlower />;
+    case "gold-bread":
+      return <GoldBread />;
+    case "reeds":
+      return <Reeds />;
+    case "splash":
+      return <Splash />;
+    case "feathers":
+      return <Feathers />;
+    case "rattle":
+      return <Rattle />;
+    case "belt":
+      return <Belt />;
+    case "pillars":
+      return <Pillars />;
+    case "sky-orb":
+      return <SkyOrb />;
+    case "torch":
+      return <Torch />;
+    case "geryon":
+      return <Geryon />;
     default: {
       const neverProp: never = kind;
       throw new Error(neverProp);

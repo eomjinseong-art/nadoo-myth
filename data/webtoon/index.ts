@@ -2,26 +2,44 @@ import { films, paintings } from "@/data/media";
 import { personBySlug } from "@/data/people";
 import { storyBySlug } from "@/data/stories";
 import { words } from "@/data/words";
+import { cyclops } from "@/data/webtoon/episodes/cyclops";
+import { herakles } from "@/data/webtoon/episodes/herakles";
+import { icarus } from "@/data/webtoon/episodes/icarus";
+import { midas } from "@/data/webtoon/episodes/midas";
+import { narcissus } from "@/data/webtoon/episodes/narcissus";
 import { pandora } from "@/data/webtoon/episodes/pandora";
 import { perseus } from "@/data/webtoon/episodes/perseus";
+import { prometheus } from "@/data/webtoon/episodes/prometheus";
+import { theseus } from "@/data/webtoon/episodes/theseus";
+import { trojanHorse } from "@/data/webtoon/episodes/trojan-horse";
 import type { Episode, PlannedEpisode } from "@/data/webtoon/types";
 
 /**
  * 새 웹툰은 episodes/ 에 파일을 만들고 이 배열에 넣습니다.
  * 새 인물이 필요하면 components/webtoon/characters.tsx 에 SVG를 추가합니다.
+ * 읽는 순서는 신화의 앞뒤입니다. 헤라클레스만 열두 과업이라 16컷까지 허용합니다.
  */
-export const episodes: Episode[] = [pandora, perseus].sort((a, b) => a.order - b.order);
+export const episodes: Episode[] = [
+  prometheus,
+  pandora,
+  perseus,
+  theseus,
+  icarus,
+  herakles,
+  narcissus,
+  midas,
+  trojanHorse,
+  cyclops,
+].sort((a, b) => a.order - b.order);
 
-export const planned: PlannedEpisode[] = [
-  { title: "프로메테우스의 불", storySlug: "prometheus" },
-  { title: "트로이 목마", storySlug: "trojan-horse" },
-  { title: "오디세우스와 키클롭스", storySlug: "odyssey" },
-  { title: "헤라클레스의 12과업", storySlug: "herakles-labors" },
-  { title: "나르키소스", storySlug: "echo-narcissus" },
-  { title: "미다스의 손", storySlug: "midas" },
-  { title: "이카로스의 날개", storySlug: "icarus" },
-  { title: "테세우스와 미노타우로스", storySlug: "theseus-minotaur" },
-];
+export const planned: PlannedEpisode[] = [];
+
+/** 일리아스이야기의 실재 앵커만. 목마와 귀향은 그 시의 본문이 아닙니다. */
+const ILIAD_HREFS = new Set([
+  "https://iliad-stories.vercel.app/scope#horse",
+  "https://iliad-stories.vercel.app/scope#odyssey",
+  "https://iliad-stories.vercel.app/heroes/odysseus",
+]);
 
 export function episodeBySlug(slug: string) {
   return episodes.find((episode) => episode.slug === slug);
@@ -31,6 +49,7 @@ const mediaIds = new Set([...films, ...paintings].map((item) => item.slug));
 const wordSlugs = new Set(words.map((word) => word.slug));
 
 function assertHref(href: string, label: string) {
+  if (ILIAD_HREFS.has(href)) return;
   if (href.startsWith("/gods/")) {
     const slug = href.slice("/gods/".length);
     if (!personBySlug.get(slug)) throw new Error(`웹툰 링크 인물 없음 (${label}): ${href}`);
@@ -60,8 +79,9 @@ const slugs = new Set<string>();
 for (const episode of episodes) {
   if (slugs.has(episode.slug)) throw new Error(`웹툰 slug 중복: ${episode.slug}`);
   slugs.add(episode.slug);
-  if (episode.panels.length < 8 || episode.panels.length > 12) {
-    throw new Error(`${episode.slug} 패널 수는 8–12이어야 합니다`);
+  const panelMax = episode.slug === "herakles" ? 16 : 12;
+  if (episode.panels.length < 8 || episode.panels.length > panelMax) {
+    throw new Error(`${episode.slug} 패널 수는 8–${panelMax}이어야 합니다`);
   }
   if (episode.quiz.length !== 3) throw new Error(`${episode.slug} 퀴즈는 3문제여야 합니다`);
   if (episode.chat.length < 5 || episode.chat.length > 8) {

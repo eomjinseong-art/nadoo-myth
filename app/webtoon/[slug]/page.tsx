@@ -57,7 +57,7 @@ export default async function WebtoonEpisodePage({ params }: { params: Promise<{
       <Breadcrumbs items={[{ href: "/", label: "홈" }, { href: "/webtoon", label: "웹툰" }, { label: episode.title }]} />
       <header className="mt-4">
         <p className="text-xs tracking-[0.2em] text-gold">
-          파일럿 · {episode.order} / {episodes.length} · 약 {episode.minutes}분 · {episode.panels.length}컷
+          {episode.order} / {episodes.length} · 약 {episode.minutes}분 · {episode.panels.length}컷
         </p>
         <h1 className="mt-1 font-serif text-3xl text-ink sm:text-4xl">{episode.title}</h1>
       </header>
