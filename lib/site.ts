@@ -159,6 +159,7 @@ export const OTHER_SITE_FILMS = [
 export const NAV = [
   { href: "/gods", label: "신과 인물" },
   { href: "/stories", label: "이야기" },
+  { href: "/webtoon", label: "웹툰" },
   { href: "/family-tree", label: "가족관계도", en: "Family Tree" },
   { href: "/words", label: "신화 속 단어" },
   { href: "/in-media", label: "작품 속 신화" },
