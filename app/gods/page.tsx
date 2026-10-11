@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHead } from "@/components/PageHead";
 import { Portrait } from "@/components/Portrait";
+import { NorseMythPointer } from "@/components/NorseMythPointer";
 import { CATEGORY_LABEL, CATEGORY_ORDER, people } from "@/data/people";
 import { breadcrumbLd, itemListLd, jsonLd, pageMetadata } from "@/lib/seo";
 
@@ -70,6 +71,7 @@ export default function GodsPage() {
           </section>
         );
       })}
+      <NorseMythPointer />
     </div>
   );
 }

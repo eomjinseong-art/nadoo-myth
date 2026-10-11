@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
 import { Portrait } from "@/components/Portrait";
+import { NorseMythPointer } from "@/components/NorseMythPointer";
 import { SisterSitesHome } from "@/components/SisterSites";
 import { godPairs } from "@/data/gvr";
 import { people } from "@/data/people";
@@ -111,6 +112,7 @@ export default function Home() {
           <Link href="/words" className="mt-3 inline-block text-sm text-gold">단어 전체 보기 →</Link>
         </div>
       </section>
+      <NorseMythPointer />
     </div>
   );
 }

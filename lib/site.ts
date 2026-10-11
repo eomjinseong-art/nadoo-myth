@@ -22,6 +22,11 @@ export const ROME_STORIES_URL = "https://rome-stories.vercel.app";
 export const ILIAD_NAME = "일리아스이야기";
 export const ILIAD_URL = "https://iliad-stories.vercel.app";
 
+/** 북유럽 신화는 바이킹이야기의 /myth 에서 이어 읽습니다. */
+export const VIKING_NAME = "바이킹이야기";
+export const VIKING_URL = "https://viking-stories.vercel.app";
+export const VIKING_MYTH_URL = `${VIKING_URL}/myth`;
+
 /**
  * Origins a link checker must treat as allowed even when they 404.
  * iliad-stories is built in parallel and goes live before this PR merges.
@@ -53,6 +58,20 @@ export const SISTER_SITES = [
     href: ROME_STORIES_URL,
     blurb: "로마의 탄생·전쟁·클레오파트라·관련 영화를 짧은 한국어로 읽습니다.",
     note: "쉬운 로마 역사. 탄생·전쟁·클레오파트라·관련 영화.",
+  },
+  {
+    name: "게르만이야기",
+    en: "Germanic",
+    href: "https://germanic-stories.vercel.app",
+    blurb: "토이토부르크에서 카롤루스 대제까지, 로마에 맞선 게르만 부족을 짧은 한국어로 읽습니다.",
+    note: "로마에 맞선 숲의 전사들.",
+  },
+  {
+    name: VIKING_NAME,
+    en: "Vikings",
+    href: VIKING_URL,
+    blurb: "린디스판에서 빈란드까지, 바이킹 시대와 북유럽 신화를 짧은 한국어로 읽습니다.",
+    note: "롱쉽의 시대와 북유럽 신화.",
   },
   {
     name: "이집트이야기",
@@ -90,6 +109,13 @@ export const SISTER_SITES = [
     note: "고조선부터 조선. 왕조와 인물.",
   },
   {
+    name: "나두세계",
+    en: "World",
+    href: "https://nadoo-world.vercel.app",
+    blurb: "나두의 세계 이야기를 한곳에서 둘러봅니다.",
+    note: "나두의 세계 이야기.",
+  },
+  {
     name: "나두연표",
     en: "Timeline",
     href: "https://nadoo-timeline.vercel.app",
@@ -108,6 +134,8 @@ export const SISTER_SITES = [
 /** 다른 가족관계도. 이 사이트(나두신화)는 빠집니다. */
 export const OTHER_FAMILY_TREES = [
   { name: "로마이야기", en: "Rome", href: "https://rome-stories.vercel.app/family-tree" },
+  { name: "게르만이야기", en: "Germanic", href: "https://germanic-stories.vercel.app/family-tree" },
+  { name: "바이킹이야기", en: "Vikings", href: "https://viking-stories.vercel.app/family-tree" },
   { name: "그리스이야기", en: "Greece", href: "https://greece-stories.vercel.app/family-tree" },
   { name: "이집트이야기", en: "Egypt", href: "https://egypt-stories.vercel.app/family-tree" },
   { name: "페르시아이야기", en: "Persia", href: "https://persia-stories.vercel.app/family-tree" },
@@ -118,6 +146,8 @@ export const OTHER_FAMILY_TREES = [
 /** 다른 사이트의 영화. 이 사이트(작품 속 신화)는 빠집니다. */
 export const OTHER_SITE_FILMS = [
   { name: "로마이야기", en: "Rome", href: "https://rome-stories.vercel.app/movies" },
+  { name: "게르만이야기", en: "Germanic", href: "https://germanic-stories.vercel.app/films" },
+  { name: "바이킹이야기", en: "Vikings", href: "https://viking-stories.vercel.app/films" },
   { name: "그리스이야기", en: "Greece", href: "https://greece-stories.vercel.app/movies" },
   { name: "이집트이야기", en: "Egypt", href: "https://egypt-stories.vercel.app/movies" },
   { name: "페르시아이야기", en: "Persia", href: "https://persia-stories.vercel.app/movies" },
