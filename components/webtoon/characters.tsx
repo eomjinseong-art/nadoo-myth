@@ -927,6 +927,8 @@ function Minotaur({ pose }: { pose: Pose }) {
     <g>
       <path d="M58 118 Q46 150 58 170" stroke="#c4886a" strokeWidth="10" fill="none" strokeLinecap="round" />
       <path d={up ? "M102 112 Q130 80 118 60" : "M102 118 Q118 150 108 170"} stroke="#c4886a" strokeWidth="10" fill="none" strokeLinecap="round" />
+      <circle cx="58" cy="172" r="7" fill="#c4886a" stroke={INK} strokeWidth="1.5" />
+      <circle cx={up ? 118 : 108} cy={up ? 62 : 172} r="7" fill="#c4886a" stroke={INK} strokeWidth="1.5" />
       <path d="M52 108 H108 Q120 150 100 176 H60 Q44 150 52 108" fill="#8c2f2b" stroke={INK} strokeWidth="2" />
       <ellipse cx="64" cy="176" rx="10" ry="5" fill="#3a3228" />
       <ellipse cx="98" cy="176" rx="10" ry="5" fill="#3a3228" />

@@ -144,7 +144,7 @@ export const herakles: Episode = {
         { id: "herakles", pose: "point", x: 90, y: feet, scale: 0.85, look: "lion" },
         { id: "iolaus", pose: "offer", x: 160, y: feet, scale: 0.65 },
       ],
-      props: [{ kind: "torch", x: 175, y: 330, scale: 1.2, front: true }],
+      props: [{ kind: "torch", x: 155, y: 400, scale: 1.15, front: true }],
       bubbles: [
         { type: "narration", text: "② 레르나의 히드라. 목을 자르면 둘이 돋아, 조카가 잘린 자리를 불로 지집니다." },
         { type: "speech", speaker: "이올라오스", text: "불 먼저, 자랑은 나중.", align: "start" },

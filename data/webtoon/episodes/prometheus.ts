@@ -124,8 +124,7 @@ export const prometheus: Episode = {
       bg: "sky",
       alt: "하늘. 프로메테우스가 불씨가 든 회향 줄기를 들고 구름 사이를 난다.",
       sfx: "타닥",
-      cast: [{ id: "prometheus", pose: "fly", x: 170, y: 300, scale: 1, ground: false }],
-      props: [{ kind: "fennel", x: 230, y: 250, scale: 1.3, front: true }],
+      cast: [{ id: "prometheus", pose: "fly", x: 180, y: 340, scale: 1.05, ground: false }],
       bubbles: [
         { type: "narration", text: "속이 빈 회향 줄기 안에 불씨를 숨깁니다." },
         { type: "speech", speaker: "프로메테우스", text: "줄기가 따뜻하면 성공.", align: "start" },
