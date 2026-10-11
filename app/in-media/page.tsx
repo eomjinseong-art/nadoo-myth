@@ -1,10 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ElsewhereBox } from "@/components/ElsewhereBox";
 import { JsonLd } from "@/components/JsonLd";
 import { OtherSiteFilms } from "@/components/SisterSites";
 import { PageHead } from "@/components/PageHead";
 import { PersonRefList, StoryRefList } from "@/components/Refs";
+import { MiniStarChart } from "@/components/MiniStarChart";
 import { constellations, films, paintings } from "@/data/media";
 import { breadcrumbLd, jsonLd, pageMetadata } from "@/lib/seo";
 import { MOVIE_CHECKLIST_URL } from "@/lib/site";
@@ -99,14 +101,28 @@ export default function InMediaPage() {
 
       <section id="stars" className="mt-14 scroll-mt-28">
         <h2 className="font-serif text-2xl text-ink">별자리</h2>
-        <p className="mt-1 text-xs text-muted">별자리 이야기는 대부분 헬레니즘 시대 이후 정리된 것이라 판본 차이가 큽니다.</p>
-        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+        <p className="mt-1 text-xs text-muted">별자리 이야기는 대부분 헬레니즘 시대 이후 정리된 것이라 판본 차이가 큽니다. 성도는 실제 별 위치에 선을 그은 것입니다.</p>
+        <p className="mt-2 text-sm">
+          <Link href="/constellations/sky" className="text-navy underline decoration-line underline-offset-4 hover:text-gold">계절별 하늘 지도</Link>
+        </p>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
           {constellations.map((s) => (
-            <div key={s.latin} className="rounded-md border border-line bg-card p-4">
-              <h3 className="font-serif text-lg text-navy">{s.ko} <span className="text-xs text-muted">{s.latin}</span></h3>
-              <p className="mt-1 text-sm leading-7 text-ink">{s.story}</p>
-              <p className="mt-1 text-xs text-muted">인물: <PersonRefList refs={s.people} /></p>
-              <p className="mt-1 text-xs text-muted">출처: {s.source}</p>
+            <div key={s.slug} id={s.slug} className="overflow-hidden rounded-md border border-line bg-card">
+              <Link href={`/constellations/${s.slug}`} className="block">
+                <MiniStarChart slug={s.slug} />
+              </Link>
+              <div className="p-4">
+                <h3 className="font-serif text-lg text-navy">
+                  <Link href={`/constellations/${s.slug}`} className="hover:text-gold">{s.ko}</Link>{" "}
+                  <span className="text-xs text-muted">{s.latin}</span>
+                </h3>
+                <p className="mt-1 text-sm leading-7 text-ink">{s.story}</p>
+                <p className="mt-1 text-xs text-muted">인물: <PersonRefList refs={s.people} /></p>
+                <p className="mt-1 text-xs text-muted">출처: {s.source}</p>
+                <Link href={`/constellations/${s.slug}`} className="mt-2 inline-block text-xs text-gold underline underline-offset-4">
+                  성도와 찾는 법
+                </Link>
+              </div>
             </div>
           ))}
         </div>

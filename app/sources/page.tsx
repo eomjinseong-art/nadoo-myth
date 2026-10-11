@@ -68,6 +68,26 @@ export default function SourcesPage() {
         <h2 className="font-serif text-base text-ink">그리스 vs 로마 메뉴의 출처 표시</h2>
         <div className="mt-2"><TagLegend /></div>
       </section>
+      <section className="mt-8">
+        <h2 className="font-serif text-xl text-navy">별자리 성도</h2>
+        <ul className="mt-3 space-y-2 text-sm leading-7">
+          <li>
+            <strong className="text-ink">별의 위치와 밝기</strong> — XHIP (Anderson & Francis, 2012, VizieR V/137D). Olaf Frohn의 d3-celestial <span className="text-muted">stars.6.json</span>을 로컬에 담아, 빌드할 때 J2000 좌표로 그렸습니다. BSD-3-Clause.
+          </li>
+          <li>
+            <strong className="text-ink">별자리 선</strong> — d3-celestial <span className="text-muted">constellations.lines.json</span>. 국제천문연맹 88개 별자리의 막대 도형에 바탕하고, 선 배치는 Olaf Frohn이 정리했습니다. BSD-3-Clause.
+          </li>
+          <li>
+            <strong className="text-ink">별 이름</strong> — 바이어 기호와 고유 이름은 d3-celestial <span className="text-muted">starnames.json</span>(HD–HIP 교차 목록 등)을 대조했습니다. 한국어는 Stellarium 하늘문화 번역을 바탕으로 하되, 널리 쓰는 표기가 다른 밝은 별은 그 표기로 고쳤습니다. 라틴·아랍 이름은 국제천문연맹이 정한 이름을 우선했습니다.
+          </li>
+          <li>
+            <strong className="text-ink">그림</strong> — 별 위에 겹치는 실루엣은 이 사이트를 위해 직접 그린 선화입니다. 외부 이미지를 쓰지 않았습니다.
+          </li>
+        </ul>
+        <p className="mt-2 text-xs text-muted">
+          Copyright (c) 2015, Olaf Frohn. 데이터는 BSD-3-Clause로 재배포합니다. 찾는 법은 북위 약 37°(서울 기준), 저녁 9시입니다. 자세한 고지는 저장소의 data/sky/DATA-LICENSE.md에 있습니다.
+        </p>
+      </section>
       <section className="mt-8 text-sm leading-7 text-muted">
         <h2 className="font-serif text-base text-ink">표기 원칙</h2>
         <p>인물 이름은 그리스어 발음을 기준으로 적고(예: 헤라클레스, 오디세우스), 로마 이름은 라틴어 발음으로 따로 적었습니다(예: 유피테르, 베누스). 널리 굳은 표기는 함께 밝혔습니다. 행·권 번호는 일반적인 원전 편집본 기준이며 번역본에 따라 조금 다를 수 있습니다.</p>

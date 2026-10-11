@@ -226,24 +226,5 @@ export const paintings: Painting[] = [
   { slug: "waterhouse-hylas", titleKo: "힐라스와 님프들", titleOrig: "Hylas and the Nymphs", artist: "존 윌리엄 워터하우스", year: "1896년", place: "맨체스터 미술관", people: ["herakles"], stories: ["argonauts"], desc: "아르고호 원정 중 물을 길러 간 헤라클레스의 젊은 동료 힐라스를 샘의 님프들이 물속으로 끌어들이는 장면. 이 일로 헤라클레스는 원정대를 떠나게 됩니다(아폴로니오스 『아르고나우티카』 1권).", w: 960, h: 595, commons: "https://commons.wikimedia.org/wiki/File:Waterhouse_Hylas_and_the_Nymphs_Manchester_Art_Gallery_1896.15.jpg", license: "Public domain" },
 ];
 
-export type Constellation = { ko: string; latin: string; people: string[]; story: string; source: string };
-
-export const constellations: Constellation[] = [
-  { ko: "페르세우스자리", latin: "Perseus", people: ["perseus"], story: "메두사의 머리를 든 영웅. 머리 부분의 변광성 알골은 '악마의 별'이라는 아랍어 이름으로, 메두사의 눈으로 여겨졌습니다.", source: "아라토스 『천문 현상』; 위(僞) 에라토스테네스 『별자리 변신』" },
-  { ko: "안드로메다자리", latin: "Andromeda", people: ["andromeda"], story: "쇠사슬에 묶인 공주. 이 별자리 안에 맨눈으로 보이는 가장 먼 천체인 안드로메다은하가 있습니다.", source: "위 에라토스테네스 『별자리 변신』" },
-  { ko: "카시오페이아자리", latin: "Cassiopeia", people: ["andromeda"], story: "딸의 미모를 자랑하다 벌을 받은 왕비. 의자에 앉은 채 하늘을 돌아 때로 거꾸로 매달린 모습이 된다고 했습니다. W자 모양으로 유명합니다.", source: "히기누스 『천문학』" },
-  { ko: "케페우스자리", latin: "Cepheus", people: ["andromeda"], story: "안드로메다의 아버지인 에티오피아 왕.", source: "아라토스 『천문 현상』" },
-  { ko: "고래자리", latin: "Cetus", people: ["perseus", "andromeda"], story: "안드로메다를 노린 바다 괴물 케토스. 이름은 '고래'지만 원래는 바다 괴물입니다.", source: "위 에라토스테네스 『별자리 변신』" },
-  { ko: "페가수스자리", latin: "Pegasus", people: ["pegasos", "bellerophon"], story: "메두사의 피에서 태어난 천마. 네 별이 이루는 '페가수스 사각형'이 가을 밤하늘의 길잡이입니다.", source: "아라토스 『천문 현상』" },
-  { ko: "헤르쿨레스자리", latin: "Hercules", people: ["herakles"], story: "무릎을 꿇은 영웅. 고대에는 '무릎 꿇은 자(엔고나신)'라고만 불렸고, 헤라클레스와의 연결은 후대 해석입니다.", source: "아라토스 『천문 현상』; 히기누스 『천문학』" },
-  { ko: "사자자리", latin: "Leo", people: ["herakles"], story: "헤라클레스가 첫 과업에서 물리친 네메아의 사자.", source: "위 에라토스테네스 『별자리 변신』" },
-  { ko: "게자리", latin: "Cancer", people: ["herakles", "hydra", "hera"], story: "히드라와 싸우는 헤라클레스의 발을 물었다가 밟혀 죽은 게. 헤라가 그 공을 기려 하늘에 올렸다고 합니다.", source: "위 에라토스테네스 『별자리 변신』" },
-  { ko: "바다뱀자리", latin: "Hydra", people: ["hydra"], story: "가장 큰 별자리. 레르나의 히드라로 해석되기도 하고, 아폴론의 까마귀 이야기 속 물뱀으로도 전합니다.", source: "히기누스 『천문학』" },
-  { ko: "큰곰자리", latin: "Ursa Major", people: ["zeus", "artemis", "hera"], story: "제우스의 사랑을 받은 님프 칼리스토가 곰으로 변한 모습이라는 이야기가 유명합니다. 누가 그녀를 곰으로 바꿨는지(헤라, 아르테미스, 제우스)는 판본마다 다릅니다.", source: "오비디우스 『변신 이야기』 2권 401–530행; 위 에라토스테네스" },
-  { ko: "거문고자리", latin: "Lyra", people: ["orpheus", "hermes", "apollo"], story: "헤르메스가 만들어 아폴론에게 준 리라가 오르페우스에게 전해졌고, 그가 죽은 뒤 무사이의 청으로 하늘에 올랐다고 합니다. 밝은 별 베가(직녀성)가 있습니다.", source: "위 에라토스테네스 『별자리 변신』" },
-  { ko: "쌍둥이자리", latin: "Gemini", people: ["helene", "zeus"], story: "헬레네의 형제인 카스토르와 폴리데우케스(폴룩스). 하나는 죽고 하나는 불사의 몸이었는데, 형제가 죽음을 나눠 갖기를 원해 함께 하늘에 올랐다고 합니다.", source: "핀다로스 『네메아 송가』 10번; 히기누스" },
-  { ko: "오리온자리", latin: "Orion", people: ["artemis", "apollo"], story: "거인 사냥꾼 오리온. 아르테미스와 얽힌 죽음의 이야기는 판본이 아주 많습니다.", source: "호메로스 『오디세이아』 5권 121–124행; 위 에라토스테네스" },
-  { ko: "전갈자리", latin: "Scorpius", people: ["artemis"], story: "오리온을 죽인 전갈. 그래서 오리온은 전갈이 뜨면 서쪽으로 진다고 이야기됩니다.", source: "위 에라토스테네스 『별자리 변신』" },
-  { ko: "북쪽왕관자리", latin: "Corona Borealis", people: ["ariadne", "dionysos"], story: "디오니소스가 아리아드네에게 준 결혼 왕관.", source: "오비디우스 『변신 이야기』 8권 176–182행" },
-  { ko: "궁수자리 · 센타우루스자리", latin: "Sagittarius · Centaurus", people: ["cheiron"], story: "둘 다 지혜로운 켄타우로스 케이론으로 해석하는 전승이 있지만, 고대 작가마다 어느 별자리가 케이론인지 다르게 말합니다.", source: "위 에라토스테네스; 히기누스 『천문학』" },
-];
+export type { Constellation } from "@/data/constellations";
+export { constellations } from "@/data/constellations";
