@@ -5,7 +5,7 @@ const feet = 448;
 export const pandora: Episode = {
   slug: "pandora",
   title: "판도라의 상자",
-  order: 1,
+  order: 2,
   minutes: 4,
   storySlug: "pandora",
   cover: "pandora-open",

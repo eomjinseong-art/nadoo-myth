@@ -20,6 +20,35 @@ export const CHAR_IDS = [
   "pegasus",
   "acrisius",
   "villager",
+  "odysseus",
+  "herakles",
+  "theseus",
+  "ariadne",
+  "daidalos",
+  "ikaros",
+  "narkissos",
+  "echo",
+  "midas",
+  "dionysos",
+  "apollo",
+  "poseidon",
+  "artemis",
+  "hades",
+  "helene",
+  "pan",
+  "atlas",
+  "nemesis",
+  "eurystheus",
+  "silenos",
+  "laocoon",
+  "aegeus",
+  "hippolyta",
+  "iolaus",
+  "helios",
+  "polyphemos",
+  "minotauros",
+  "hydra",
+  "kerberos",
 ] as const;
 
 export type CharId = (typeof CHAR_IDS)[number];
@@ -50,7 +79,7 @@ export const POSES = [
 
 export type Pose = (typeof POSES)[number];
 
-export type Look = "plain" | "ready" | "aegis";
+export type Look = "plain" | "ready" | "aegis" | "wings" | "melt" | "lion" | "ears";
 
 export type FigStyle = "clay";
 
@@ -65,6 +94,11 @@ export const BG_NAMES = [
   "shore",
   "arena",
   "sky",
+  "forest",
+  "night",
+  "labyrinth",
+  "river",
+  "underworld",
 ] as const;
 
 export type BgName = (typeof BG_NAMES)[number];
@@ -87,6 +121,34 @@ export const PROP_KINDS = [
   "ribbons",
   "cloud",
   "ledge",
+  "fennel",
+  "eagle",
+  "chains",
+  "wooden-horse",
+  "sheep",
+  "wine",
+  "deer",
+  "boar",
+  "bull",
+  "mare",
+  "birds",
+  "cattle",
+  "apples",
+  "thread",
+  "sail",
+  "sun",
+  "pond",
+  "narcissus",
+  "gold-bread",
+  "reeds",
+  "splash",
+  "feathers",
+  "rattle",
+  "belt",
+  "pillars",
+  "sky-orb",
+  "torch",
+  "geryon",
 ] as const;
 
 export type PropKind = (typeof PROP_KINDS)[number];

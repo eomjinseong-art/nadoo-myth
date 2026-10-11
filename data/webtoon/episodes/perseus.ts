@@ -5,7 +5,7 @@ const feet = 448;
 export const perseus: Episode = {
   slug: "perseus",
   title: "페르세우스와 메두사",
-  order: 2,
+  order: 3,
   minutes: 5,
   storySlug: "perseus",
   cover: "perseus-cave",

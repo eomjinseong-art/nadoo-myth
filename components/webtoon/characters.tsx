@@ -48,6 +48,14 @@ type Spec = {
   owl?: boolean;
   spear?: boolean;
   heroKit?: boolean;
+  horns?: boolean;
+  trident?: boolean;
+  bow?: boolean;
+  club?: boolean;
+  lyre?: boolean;
+  pipes?: boolean;
+  laurel?: boolean;
+  ivy?: boolean;
 };
 
 const HUMAN = { footX: 80, footY: 178, head: "36 8 88 96" };
@@ -69,11 +77,40 @@ export const CHAR_FRAME: Record<CharId, { footX: number; footY: number; head: st
   andromeda: HUMAN,
   acrisius: HUMAN,
   villager: HUMAN,
+  odysseus: HUMAN,
+  herakles: HUMAN,
+  theseus: HUMAN,
+  ariadne: HUMAN,
+  daidalos: HUMAN,
+  ikaros: HUMAN,
+  narkissos: HUMAN,
+  echo: HUMAN,
+  midas: HUMAN,
+  dionysos: HUMAN,
+  apollo: HUMAN,
+  poseidon: HUMAN,
+  artemis: HUMAN,
+  hades: HUMAN,
+  helene: HUMAN,
+  pan: HUMAN,
+  atlas: HUMAN,
+  nemesis: HUMAN,
+  eurystheus: HUMAN,
+  silenos: HUMAN,
+  laocoon: HUMAN,
+  aegeus: HUMAN,
+  hippolyta: HUMAN,
+  iolaus: HUMAN,
+  helios: HUMAN,
   graeae: { footX: 162, footY: 139, head: "26 4 76 80" },
   pegasus: { footX: 108, footY: 134, head: "16 6 70 62" },
+  polyphemos: { footX: 96, footY: 196, head: "46 10 100 96" },
+  minotauros: { footX: 80, footY: 176, head: "34 6 92 88" },
+  hydra: { footX: 110, footY: 132, head: "78 4 64 58" },
+  kerberos: { footX: 100, footY: 118, head: "18 8 70 58" },
 };
 
-const SPECS: Record<Exclude<CharId, "pegasus" | "graeae">, Spec> = {
+const SPECS: Record<Exclude<CharId, "pegasus" | "graeae" | "polyphemos" | "minotauros" | "hydra" | "kerberos">, Spec> = {
   zeus: { skin: "#f3c7a6", blush: "#ef9b96", hair: "#f7f4ee", hairStyle: "curls", beard: "full", robe: "#5c3d8a", trim: "#f0d36a", hem: "long", crown: true, bolt: true },
   hera: { skin: "#f3c7a6", blush: "#ef9b96", hair: "#3a2430", hairStyle: "bun", robe: "#1e7a6d", trim: "#f0d36a", hem: "long", crown: true, feather: true },
   prometheus: { skin: "#f0c3a0", blush: "#ef9b96", hair: "#8a3e22", hairStyle: "short", beard: "short", robe: "#c46b3a", trim: "#f0d36a", hem: "short", flame: true },
@@ -90,6 +127,31 @@ const SPECS: Record<Exclude<CharId, "pegasus" | "graeae">, Spec> = {
   andromeda: { skin: "#8d5a3c", blush: "#d4897a", hair: "#2a1c16", hairStyle: "long", robe: "#f7f3ea", trim: "#e6c36a", hem: "long" },
   acrisius: { skin: "#e8c0a4", blush: "#e7a090", hair: "#f4f1ea", hairStyle: "short", beard: "full", robe: "#4d5966", trim: "#e6c36a", hem: "long", crown: true },
   villager: { skin: "#f0c3a0", blush: "#ef9b96", hair: "#5a4030", hairStyle: "short", robe: "#6e8b5a", trim: "#c4a574", hem: "short" },
+  odysseus: { skin: "#e8b892", blush: "#e7a090", hair: "#3a2a22", hairStyle: "short", beard: "short", robe: "#3d5c78", trim: "#e6c36a", hem: "short", cape: "#8c2f2b" },
+  herakles: { skin: "#e8b07a", blush: "#e7a090", hair: "#6a3a22", hairStyle: "short", beard: "short", robe: "#c46b3a", trim: "#f0d36a", hem: "short", wide: true, club: true },
+  theseus: { skin: "#f0c3a0", blush: "#ef9b96", hair: "#4a3028", hairStyle: "short", robe: "#8c2f2b", trim: "#e6c36a", hem: "short", cape: "#1f3b57" },
+  ariadne: { skin: "#e0a87a", blush: "#d4897a", hair: "#3a2218", hairStyle: "long", robe: "#c23b4a", trim: "#f0d36a", hem: "long", crown: true },
+  daidalos: { skin: "#e8c0a4", blush: "#e7a090", hair: "#d5d0c8", hairStyle: "short", beard: "short", robe: "#6b5344", trim: "#c4a574", hem: "short", apron: "#c4a574", elder: true },
+  ikaros: { skin: "#f6d0b0", blush: "#ef9b96", hair: "#c47a3a", hairStyle: "curls", robe: "#f4e4c4", trim: "#7eb4d8", hem: "short" },
+  narkissos: { skin: "#f6d0b4", blush: "#ef9b96", hair: "#f2e2a8", hairStyle: "curls", robe: "#f7f4ee", trim: "#e6c36a", hem: "short", flowers: true },
+  echo: { skin: "#f3d2c4", blush: "#ef9b96", hair: "#6a8f72", hairStyle: "long", robe: "#d5ebe0", trim: "#7eb4a2", hem: "long" },
+  midas: { skin: "#e8b892", blush: "#e7a090", hair: "#c4a574", hairStyle: "short", beard: "short", robe: "#7a3e8c", trim: "#f0d36a", hem: "long", crown: true },
+  dionysos: { skin: "#f0c3a0", blush: "#ef9b96", hair: "#5a2a48", hairStyle: "curls", robe: "#6a2a6a", trim: "#9dce7a", hem: "short", ivy: true, cape: "#4a1e4a" },
+  apollo: { skin: "#f6d0b0", blush: "#ef9b96", hair: "#f2d98a", hairStyle: "curls", robe: "#f7f4ee", trim: "#f0d36a", hem: "short", laurel: true, lyre: true },
+  poseidon: { skin: "#e8c4b0", blush: "#e7a090", hair: "#e8eef2", hairStyle: "curls", beard: "full", robe: "#1f6f8a", trim: "#e6c36a", hem: "long", crown: true, trident: true },
+  artemis: { skin: "#f3c7a6", blush: "#ef9b96", hair: "#6a4a2a", hairStyle: "bun", robe: "#dfe8d4", trim: "#c4a574", hem: "short", bow: true },
+  hades: { skin: "#e0c2b0", blush: "#d4a0a0", hair: "#2b2620", hairStyle: "short", beard: "short", robe: "#2a2438", trim: "#e6c36a", hem: "long", crown: true },
+  helene: { skin: "#f6d0b4", blush: "#ef9b96", hair: "#e8c878", hairStyle: "long", robe: "#f7f3ea", trim: "#e6c36a", hem: "long", crown: true },
+  pan: { skin: "#e8b892", blush: "#e7a090", hair: "#6a4028", hairStyle: "curls", beard: "short", robe: "#8a9a5a", trim: "#c4a574", hem: "short", horns: true, pipes: true },
+  atlas: { skin: "#e0b08a", blush: "#e7a090", hair: "#4a3428", hairStyle: "short", beard: "full", robe: "#5c6a78", trim: "#e6c36a", hem: "short", wide: true },
+  nemesis: { skin: "#f0c3a0", blush: "#ef9b96", hair: "#2b2620", hairStyle: "bun", robe: "#3a3228", trim: "#e6c36a", hem: "long", wings: true },
+  eurystheus: { skin: "#f3c7a6", blush: "#ef9b96", hair: "#8a6848", hairStyle: "short", robe: "#c9a24a", trim: "#f0d36a", hem: "long", crown: true },
+  silenos: { skin: "#e8c0a4", blush: "#e7a090", hair: "#f4f1ea", hairStyle: "short", beard: "full", robe: "#d7b48a", trim: "#9dce7a", hem: "short", elder: true, ivy: true },
+  laocoon: { skin: "#e0b08a", blush: "#e7a090", hair: "#d5d0c8", hairStyle: "short", beard: "full", robe: "#f7f4ee", trim: "#c4a574", hem: "long", elder: true },
+  aegeus: { skin: "#e8c0a4", blush: "#e7a090", hair: "#f4f1ea", hairStyle: "short", beard: "full", robe: "#1f3b57", trim: "#e6c36a", hem: "long", crown: true, elder: true },
+  hippolyta: { skin: "#c4886a", blush: "#d4897a", hair: "#2a1c16", hairStyle: "long", robe: "#8c2f2b", trim: "#f0d36a", hem: "short", helmet: true },
+  iolaus: { skin: "#f0c3a0", blush: "#ef9b96", hair: "#8a3e22", hairStyle: "short", robe: "#c47b5a", trim: "#e6c36a", hem: "short" },
+  helios: { skin: "#f6d0b0", blush: "#ef9b96", hair: "#f2d36a", hairStyle: "curls", robe: "#f0d36a", trim: "#e07a32", hem: "short", crown: true },
 };
 
 type Arm = "down" | "up" | "point" | "offer" | "open" | "craft" | "sneak" | "shield" | "fly" | "wave";
@@ -498,6 +560,54 @@ function Caduceus({ x, y }: { x: number; y: number }) {
   );
 }
 
+function Club({ x, y }: { x: number; y: number }) {
+  return (
+    <g transform={`translate(${x} ${y}) rotate(18)`}>
+      <rect x="-3" y="-6" width="6" height="28" rx="2" fill="#8a5a32" stroke={INK} strokeWidth="1.2" />
+      <ellipse cx="0" cy="-12" rx="8" ry="10" fill="#a86b3c" stroke={INK} strokeWidth="1.3" />
+    </g>
+  );
+}
+
+function Trident({ x, y }: { x: number; y: number }) {
+  return (
+    <g transform={`translate(${x} ${y})`} stroke="#d5dbe0" strokeWidth="2.2" fill="none" strokeLinecap="round">
+      <path d="M0 16 V-22" />
+      <path d="M-8 -10 V-22" />
+      <path d="M8 -10 V-22" />
+      <path d="M-8 -10 H8" />
+    </g>
+  );
+}
+
+function Bow({ x, y }: { x: number; y: number }) {
+  return (
+    <g transform={`translate(${x} ${y})`}>
+      <path d="M-2 -16 Q14 0 -2 16" fill="none" stroke="#8a5a32" strokeWidth="2.2" />
+      <path d="M-2 -16 L-2 16" stroke="#e6c36a" strokeWidth="1" />
+    </g>
+  );
+}
+
+function Lyre({ x, y }: { x: number; y: number }) {
+  return (
+    <g transform={`translate(${x} ${y})`}>
+      <path d="M-8 10 Q-10 -8 0 -14 Q10 -8 8 10 Z" fill="#f0d36a" stroke={INK} strokeWidth="1.3" />
+      <path d="M-4 8 V-6 M0 9 V-8 M4 8 V-6" stroke={INK} strokeWidth="0.7" />
+    </g>
+  );
+}
+
+function Pipes({ x, y }: { x: number; y: number }) {
+  return (
+    <g transform={`translate(${x} ${y})`} fill="#e7d3a8" stroke={INK} strokeWidth="1">
+      <rect x="-8" y="-8" width="4" height="16" rx="1" />
+      <rect x="-3" y="-12" width="4" height="20" rx="1" />
+      <rect x="2" y="-6" width="4" height="14" rx="1" />
+    </g>
+  );
+}
+
 function Rose({ x, y }: { x: number; y: number }) {
   return (
     <g transform={`translate(${x} ${y})`}>
@@ -592,6 +702,22 @@ function Human({ spec, pose, look }: { spec: Spec; pose: Pose; look: Look }) {
           <path d="M112 108 Q154 68 132 132 Q112 118 106 128" />
         </g>
       ) : null}
+      {look === "wings" || look === "melt" ? (
+        <g fill="#fbfaf6" stroke={INK} strokeWidth="1.6">
+          <path d="M50 112 Q4 78 22 158 Q46 128 56 146" />
+          <path d="M110 112 Q156 78 138 158 Q114 128 104 146" />
+          <path d="M44 100 Q10 62 28 124" fill="#f4e7c4" />
+          <path d="M116 100 Q150 62 132 124" fill="#f4e7c4" />
+        </g>
+      ) : null}
+      {look === "melt" ? (
+        <g fill="#f0d36a">
+          <circle cx="24" cy="150" r="3.2" />
+          <circle cx="140" cy="164" r="2.6" />
+          <circle cx="16" cy="128" r="2" />
+          <path d="M34 156 q6 10 2 16" stroke="#f0d36a" strokeWidth="2" fill="none" />
+        </g>
+      ) : null}
       {spec.cape ? (
         <g fill={spec.cape} stroke={INK} strokeWidth="1.5">
           <path d="M60 100 Q34 132 48 170 L74 150 Z" />
@@ -633,6 +759,44 @@ function Human({ spec, pose, look }: { spec: Spec; pose: Pose; look: Look }) {
         </g>
       ) : null}
       {spec.crown ? <path d="M54 38 L60 20 L70 34 L80 14 L90 34 L100 20 L106 38 Z" fill="#f0d36a" stroke={INK} strokeWidth="1.5" strokeLinejoin="round" /> : null}
+      {spec.laurel ? (
+        <g fill="#7ea86a" stroke={INK} strokeWidth="1">
+          <path d="M52 46 Q40 36 58 34" />
+          <path d="M108 46 Q120 36 102 34" />
+          <ellipse cx="48" cy="40" rx="5" ry="3" />
+          <ellipse cx="112" cy="40" rx="5" ry="3" />
+        </g>
+      ) : null}
+      {spec.ivy ? (
+        <g fill="#6fa35a" stroke={INK} strokeWidth="1">
+          <circle cx="58" cy="36" r="4" />
+          <circle cx="102" cy="36" r="4" />
+          <circle cx="80" cy="28" r="3.4" />
+        </g>
+      ) : null}
+      {spec.horns ? (
+        <g fill="#e6c98a" stroke={INK} strokeWidth="1.4">
+          <path d="M58 42 Q46 12 66 30" />
+          <path d="M102 42 Q114 12 94 30" />
+        </g>
+      ) : null}
+      {look === "ears" ? (
+        <g fill="#e8b892" stroke={INK} strokeWidth="1.6">
+          <ellipse cx="50" cy="24" rx="8" ry="18" />
+          <ellipse cx="110" cy="24" rx="8" ry="18" />
+          <ellipse cx="50" cy="28" rx="3" ry="8" fill="#ef9b96" stroke="none" />
+          <ellipse cx="110" cy="28" rx="3" ry="8" fill="#ef9b96" stroke="none" />
+        </g>
+      ) : null}
+      {look === "lion" ? (
+        <g>
+          <path d="M42 58 Q40 18 80 16 Q120 18 118 58 Q100 40 80 42 Q60 40 42 58" fill="#c46b3a" stroke={INK} strokeWidth="1.8" />
+          <circle cx="68" cy="34" r="6" fill="#e0a060" stroke={INK} strokeWidth="1.2" />
+          <circle cx="92" cy="34" r="6" fill="#e0a060" stroke={INK} strokeWidth="1.2" />
+          <path d="M70 30 Q68 34 72 34" stroke={INK} fill="none" />
+          <path d="M90 30 Q92 34 88 34" stroke={INK} fill="none" />
+        </g>
+      ) : null}
       {spec.flowers ? (
         <g>
           {[[62, 32], [80, 24], [98, 32]].map(([x, y]) => (
@@ -649,6 +813,11 @@ function Human({ spec, pose, look }: { spec: Spec; pose: Pose; look: Look }) {
       {spec.flame ? <Fennel x={hands.rx} y={hands.ry} /> : null}
       {spec.hammer ? <Hammer x={(hands.lx + hands.rx) / 2} y={(hands.ly + hands.ry) / 2 - 8} /> : null}
       {spec.caduceus ? <Caduceus x={hands.rx} y={hands.ry} /> : null}
+      {spec.club ? <Club x={hands.rx} y={hands.ry} /> : null}
+      {spec.trident ? <Trident x={hands.rx} y={hands.ry} /> : null}
+      {spec.bow ? <Bow x={hands.lx} y={hands.ly} /> : null}
+      {spec.lyre ? <Lyre x={hands.rx} y={hands.ry} /> : null}
+      {spec.pipes ? <Pipes x={hands.rx} y={hands.ry} /> : null}
       {spec.rose ? <Rose x={hands.rx} y={hands.ry - 6} /> : null}
       {shieldKind ? <RoundShield x={hands.lx - 2} y={hands.ly + 2} kind={shieldKind} /> : null}
       {spec.heroKit && look === "ready" ? <Harpe x={100} y={126} /> : null}
@@ -717,13 +886,136 @@ function Pegasus({ pose }: { pose: Pose }) {
   );
 }
 
-function resolveSpec(id: Exclude<CharId, "pegasus" | "graeae">, style?: FigStyle, variant?: number): Spec {
+function faceFor(pose: Pose) {
+  if (pose === "angry") return { brow: -6, mouth: "M-6 8 Q0 4 6 8" };
+  if (pose === "sleepy") return { brow: 0, mouth: "M-5 8 Q0 10 5 8", shut: true };
+  if (pose === "surprised" || pose === "oops") return { brow: 4, mouth: "M-4 8 Q0 14 4 8" };
+  if (pose === "sad" || pose === "worried") return { brow: 5, mouth: "M-6 10 Q0 6 6 10" };
+  if (pose === "happy" || pose === "proud" || pose === "wave") return { brow: 0, mouth: "M-6 7 Q0 13 6 7" };
+  return { brow: 0, mouth: "M-5 8 Q0 11 5 8" };
+}
+
+function Polyphemos({ pose }: { pose: Pose }) {
+  const face = faceFor(pose);
+  return (
+    <g>
+      <ellipse cx="96" cy="150" rx="48" ry="36" fill="#c4a574" stroke={INK} strokeWidth="2" />
+      <path d="M58 132 Q40 170 62 188" stroke="#e8b892" strokeWidth="10" fill="none" strokeLinecap="round" />
+      <path d="M134 132 Q152 170 130 188" stroke="#e8b892" strokeWidth="10" fill="none" strokeLinecap="round" />
+      <ellipse cx="70" cy="190" rx="12" ry="6" fill="#6b5344" stroke={INK} />
+      <ellipse cx="122" cy="190" rx="12" ry="6" fill="#6b5344" stroke={INK} />
+      <circle cx="96" cy="78" r="46" fill="#e8b892" stroke={INK} strokeWidth="2.2" />
+      <ellipse cx="96" cy="86" rx="16" ry="14" fill="#fff" stroke={INK} strokeWidth="1.8" />
+      {face.shut ? (
+        <path d="M84 86 Q96 92 108 86" stroke={INK} strokeWidth="2" fill="none" />
+      ) : (
+        <circle cx="96" cy="88" r="6" fill="#3a6a8a" stroke={INK} />
+      )}
+      <path d={`M78 ${70 + face.brow} Q96 ${62 + face.brow} 114 ${70 + face.brow}`} stroke={INK} strokeWidth="2" fill="none" />
+      <ellipse cx="96" cy="102" rx="8" ry="5" fill="#e7a090" />
+      <path d={face.mouth} transform="translate(96 100)" stroke={INK} strokeWidth="1.6" fill="none" />
+      <path d="M62 70 Q70 40 84 58" fill="#6a4028" stroke={INK} strokeWidth="1.3" />
+      <path d="M130 70 Q122 40 108 58" fill="#6a4028" stroke={INK} strokeWidth="1.3" />
+    </g>
+  );
+}
+
+function Minotaur({ pose }: { pose: Pose }) {
+  const face = faceFor(pose);
+  const up = pose === "angry" || pose === "surprised";
+  return (
+    <g>
+      <path d="M58 118 Q46 150 58 170" stroke="#c4886a" strokeWidth="10" fill="none" strokeLinecap="round" />
+      <path d={up ? "M102 112 Q130 80 118 60" : "M102 118 Q118 150 108 170"} stroke="#c4886a" strokeWidth="10" fill="none" strokeLinecap="round" />
+      <circle cx="58" cy="172" r="7" fill="#c4886a" stroke={INK} strokeWidth="1.5" />
+      <circle cx={up ? 118 : 108} cy={up ? 62 : 172} r="7" fill="#c4886a" stroke={INK} strokeWidth="1.5" />
+      <path d="M52 108 H108 Q120 150 100 176 H60 Q44 150 52 108" fill="#8c2f2b" stroke={INK} strokeWidth="2" />
+      <ellipse cx="64" cy="176" rx="10" ry="5" fill="#3a3228" />
+      <ellipse cx="98" cy="176" rx="10" ry="5" fill="#3a3228" />
+      <circle cx="80" cy="64" r="32" fill="#d7b48a" stroke={INK} strokeWidth="2.2" />
+      <path d="M52 58 Q40 20 62 46" fill="#e6c98a" stroke={INK} strokeWidth="1.5" />
+      <path d="M108 58 Q120 20 98 46" fill="#e6c98a" stroke={INK} strokeWidth="1.5" />
+      <ellipse cx="62" cy="66" rx="7" ry="5" fill="#c4886a" stroke={INK} />
+      <ellipse cx="98" cy="66" rx="7" ry="5" fill="#c4886a" stroke={INK} />
+      <ellipse cx="68" cy="62" rx="4" ry="4" fill="#fff" stroke={INK} />
+      <ellipse cx="92" cy="62" rx="4" ry="4" fill="#fff" stroke={INK} />
+      <circle cx="68" cy="62" r="1.6" fill={INK} />
+      <circle cx="92" cy="62" r="1.6" fill={INK} />
+      <ellipse cx="80" cy="76" rx="10" ry="7" fill="#c4886a" stroke={INK} strokeWidth="1.3" />
+      <circle cx="76" cy="76" r="1.3" fill={INK} />
+      <circle cx="84" cy="76" r="1.3" fill={INK} />
+      <path d={face.mouth} transform="translate(80 82)" stroke={INK} strokeWidth="1.5" fill="none" />
+    </g>
+  );
+}
+
+function Hydra({ pose }: { pose: Pose }) {
+  const face = faceFor(pose);
+  const necks = [
+    [40, 70],
+    [70, 48],
+    [100, 36],
+    [130, 48],
+    [160, 72],
+  ];
+  return (
+    <g>
+      <ellipse cx="110" cy="112" rx="46" ry="22" fill="#7ea86a" stroke={INK} strokeWidth="2" />
+      {necks.map(([x, y]) => (
+        <g key={`${x}-${y}`}>
+          <path d={`M110 100 Q${x} ${y + 30} ${x} ${y + 16}`} stroke="#6f9a48" strokeWidth="8" fill="none" strokeLinecap="round" />
+          <circle cx={x} cy={y} r="12" fill="#b7d39a" stroke={INK} strokeWidth="1.5" />
+          <circle cx={x - 4} cy={y - 1} r="1.5" fill={INK} />
+          <circle cx={x + 4} cy={y - 1} r="1.5" fill={INK} />
+          <path d={face.mouth} transform={`translate(${x} ${y + 4}) scale(0.55)`} stroke={INK} strokeWidth="1.6" fill="none" />
+        </g>
+      ))}
+    </g>
+  );
+}
+
+function Kerberos({ pose }: { pose: Pose }) {
+  const happy = pose === "happy" || pose === "proud" || pose === "idle";
+  const heads = [38, 78, 118];
+  return (
+    <g>
+      <ellipse cx="100" cy="96" rx="58" ry="24" fill="#3a3228" stroke={INK} strokeWidth="2" />
+      <path d="M146 90 Q172 70 160 108" stroke="#6f9a48" strokeWidth="6" fill="none" strokeLinecap="round" />
+      <circle cx="162" cy="70" r="7" fill="#9dce7a" stroke={INK} />
+      <circle cx="160" cy="68" r="1" fill={INK} />
+      {heads.map((x) => (
+        <g key={x}>
+          <circle cx={x} cy="58" r="18" fill="#4a4038" stroke={INK} strokeWidth="1.6" />
+          <ellipse cx={x - 10} cy="46" rx="5" ry="8" fill="#4a4038" stroke={INK} />
+          <ellipse cx={x + 10} cy="46" rx="5" ry="8" fill="#4a4038" stroke={INK} />
+          <circle cx={x - 5} cy="56" r="2" fill="#fff" />
+          <circle cx={x + 5} cy="56" r="2" fill="#fff" />
+          <circle cx={x - 5} cy="56" r="1" fill={INK} />
+          <circle cx={x + 5} cy="56" r="1" fill={INK} />
+          <ellipse cx={x} cy="64" rx="4" ry="3" fill="#e7a090" />
+          {happy ? <path d={`M${x - 5} 68 Q${x} 73 ${x + 5} 68`} stroke={INK} fill="none" /> : null}
+        </g>
+      ))}
+      <ellipse cx="70" cy="116" rx="8" ry="4" fill="#2b2620" />
+      <ellipse cx="130" cy="116" rx="8" ry="4" fill="#2b2620" />
+    </g>
+  );
+}
+
+function resolveSpec(
+  id: Exclude<CharId, "pegasus" | "graeae" | "polyphemos" | "minotauros" | "hydra" | "kerberos">,
+  style?: FigStyle,
+  variant?: number,
+): Spec {
   const base = SPECS[id];
   if (id === "pandora" && style === "clay") {
     return { ...base, skin: "#e4c4a0", blush: "#e7b8a4", hair: "#c4a07a", robe: "#d7b48a", trim: "#c4a574", flowers: false };
   }
   if (id === "villager" && variant === 1) {
     return { ...base, robe: "#c47b5a", hair: "#3a2a22" };
+  }
+  if (id === "villager" && variant === 2) {
+    return { ...base, robe: "#3d5c78", hair: "#2b2620", cape: "#1f3b57" };
   }
   return base;
 }
@@ -743,6 +1035,10 @@ export function Char({
 }) {
   if (id === "pegasus") return <Pegasus pose={pose} />;
   if (id === "graeae") return <Graeae pose={pose} />;
+  if (id === "polyphemos") return <Polyphemos pose={pose} />;
+  if (id === "minotauros") return <Minotaur pose={pose} />;
+  if (id === "hydra") return <Hydra pose={pose} />;
+  if (id === "kerberos") return <Kerberos pose={pose} />;
   return <Human spec={resolveSpec(id, style, variant)} pose={pose} look={look} />;
 }
 
