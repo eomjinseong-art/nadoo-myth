@@ -116,6 +116,13 @@ export const SISTER_SITES = [
     note: "나두의 세계 이야기.",
   },
   {
+    name: "나두예술",
+    en: "Arts",
+    href: "https://nadoo-arts.vercel.app",
+    blurb: "신화를 그린 명화와 이탈리아·프랑스 음악가를 쉬운 한국어로 둘러봅니다.",
+    note: "신화를 그린 화가들, 음악관·미술관.",
+  },
+  {
     name: "나두연표",
     en: "Timeline",
     href: "https://nadoo-timeline.vercel.app",
