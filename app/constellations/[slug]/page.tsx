@@ -8,6 +8,7 @@ import { constellationBySlug, constellations } from "@/data/constellations";
 import { episodeBySlug } from "@/data/webtoon";
 import { getChart } from "@/lib/starchart/chart";
 import { articleLd, breadcrumbLd, jsonLd, pageMetadata } from "@/lib/seo";
+import { CoupangCard } from "@/components/CoupangCard";
 
 export function generateStaticParams() {
   return constellations.map((item) => ({ slug: item.slug }));
@@ -110,6 +111,7 @@ export default async function ConstellationPage({ params }: { params: Promise<{ 
           {next.ko} →
         </Link>
       </nav>
+      <CoupangCard />
     </article>
   );
 }

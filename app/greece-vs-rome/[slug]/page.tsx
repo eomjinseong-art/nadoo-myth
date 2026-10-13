@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { godPairs, pairBySlug } from "@/data/gvr";
 import { personBySlug } from "@/data/people";
 import { articleLd, breadcrumbLd, jsonLd, pageMetadata } from "@/lib/seo";
+import { CoupangCard } from "@/components/CoupangCard";
 
 export function generateStaticParams() {
   return godPairs.map((p) => ({ slug: p.slug }));
@@ -109,6 +110,7 @@ export default async function PairPage({ params }: { params: Promise<{ slug: str
         {prev ? <Link href={`/greece-vs-rome/${prev.slug}`} className="text-navy hover:text-gold">← {prev.greekKo} vs {prev.romanKo}</Link> : <span />}
         {next ? <Link href={`/greece-vs-rome/${next.slug}`} className="text-navy hover:text-gold">{next.greekKo} vs {next.romanKo} →</Link> : <span />}
       </nav>
+      <CoupangCard />
     </article>
   );
 }

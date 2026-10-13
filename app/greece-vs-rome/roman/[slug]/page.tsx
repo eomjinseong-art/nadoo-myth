@@ -6,6 +6,7 @@ import { ElsewhereBox } from "@/components/ElsewhereBox";
 import { JsonLd } from "@/components/JsonLd";
 import { romanBySlug, romanDeities } from "@/data/gvr";
 import { articleLd, breadcrumbLd, jsonLd, pageMetadata } from "@/lib/seo";
+import { CoupangCard } from "@/components/CoupangCard";
 
 export function generateStaticParams() {
   return romanDeities.map((r) => ({ slug: r.slug }));
@@ -78,6 +79,7 @@ export default async function RomanPage({ params }: { params: Promise<{ slug: st
           </Link>
         ))}
       </nav>
+      <CoupangCard />
     </article>
   );
 }

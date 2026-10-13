@@ -11,6 +11,7 @@ import { paintings } from "@/data/media";
 import { words } from "@/data/words";
 import { familyTreeHref } from "@/data/family-tree";
 import { articleLd, breadcrumbLd, jsonLd, pageMetadata } from "@/lib/seo";
+import { CoupangCard } from "@/components/CoupangCard";
 
 export function generateStaticParams() {
   return people.map((p) => ({ slug: p.slug }));
@@ -169,6 +170,7 @@ export default async function PersonPage({ params }: { params: Promise<{ slug: s
       <p className="mt-6 text-sm">
         <Link href={familyTreeHref(p.slug)} className="text-gold">가족관계도에서 보기 →</Link>
       </p>
+      <CoupangCard />
     </article>
   );
 }
