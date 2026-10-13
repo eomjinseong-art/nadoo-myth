@@ -8,6 +8,7 @@ import { PersonRefList, SourceList, Variants } from "@/components/Refs";
 import { films, paintings } from "@/data/media";
 import { stories, storyBySlug } from "@/data/stories";
 import { articleLd, breadcrumbLd, jsonLd, pageMetadata } from "@/lib/seo";
+import { CoupangCard } from "@/components/CoupangCard";
 
 export function generateStaticParams() {
   return stories.map((s) => ({ slug: s.slug }));
@@ -94,6 +95,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
           <Link href={`/stories/${next.slug}`} className="text-right text-navy hover:text-gold">{next.title} →</Link>
         ) : <span />}
       </nav>
+      <CoupangCard />
     </article>
   );
 }

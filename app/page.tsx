@@ -11,6 +11,7 @@ import { episodes } from "@/data/webtoon";
 import { words } from "@/data/words";
 import { jsonLd, pageMetadata, websiteLd } from "@/lib/seo";
 import { BRAND_LINE, SITE_SUB, SITE_TAGLINE } from "@/lib/site";
+import { CoupangCard } from "@/components/CoupangCard";
 
 export const metadata = pageMetadata({ title: "홈", description: `${SITE_TAGLINE}. ${SITE_SUB}`, path: "/" });
 
@@ -51,6 +52,7 @@ export default function Home() {
         </p>
       </section>
 
+      <CoupangCard />
       <div className="meander opacity-50" aria-hidden />
 
       <section className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

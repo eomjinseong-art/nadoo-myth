@@ -5,6 +5,7 @@ import { PersonRefList, SourceList, StoryRefList } from "@/components/Refs";
 import { wordBySlug, words } from "@/data/words";
 import { articleLd, breadcrumbLd, jsonLd, pageMetadata } from "@/lib/seo";
 import { StatusBadge } from "../StatusBadge";
+import { CoupangCard } from "@/components/CoupangCard";
 
 export function generateStaticParams() {
   return words.map((w) => ({ slug: w.slug }));
@@ -57,6 +58,7 @@ export default async function WordPage({ params }: { params: Promise<{ slug: str
         ) : null}
       </dl>
       <SourceList sources={w.sources} title="근거" />
+      <CoupangCard />
     </article>
   );
 }

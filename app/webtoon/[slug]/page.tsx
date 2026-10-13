@@ -10,6 +10,7 @@ import { personBySlug } from "@/data/people";
 import { storyBySlug } from "@/data/stories";
 import { episodeBySlug, episodes } from "@/data/webtoon";
 import { articleLd, breadcrumbLd, jsonLd, pageMetadata } from "@/lib/seo";
+import { CoupangCard } from "@/components/CoupangCard";
 
 export function generateStaticParams() {
   return episodes.map((episode) => ({ slug: episode.slug }));
@@ -144,6 +145,7 @@ export default async function WebtoonEpisodePage({ params }: { params: Promise<{
           </Link>
         )}
       </nav>
+      <CoupangCard />
     </article>
   );
 }
