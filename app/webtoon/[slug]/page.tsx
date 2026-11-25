@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -99,6 +100,7 @@ export default async function WebtoonEpisodePage({ params }: { params: Promise<{
         {episode.moral}
       </p>
       <Quiz slug={episode.slug} questions={episode.quiz} />
+      <NadooAd inline />
       <section className="mt-10">
         <h2 className="font-serif text-xl text-ink">이 편에 나온 인물</h2>
         <p className="mt-1 text-xs text-muted">이름을 누르면 인물 페이지로, 가계를 누르면 가족관계도에서 그 칸이 밝아집니다.</p>

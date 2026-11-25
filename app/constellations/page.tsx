@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
@@ -35,6 +36,7 @@ export default function ConstellationsPage() {
         title="별자리"
         lead="별의 실제 위치와 이어 붙인 선으로, 그 이름이 왜 그 모습인지 볼 수 있게 그렸습니다. 이름을 누르면 성도와 찾는 법이 나옵니다."
       />
+      <NadooAd inline />
       <p className="mt-4">
         <Link href="/constellations/sky" className="text-sm text-navy underline decoration-line underline-offset-4 hover:text-gold">
           계절별 하늘 지도 — 한국에서 저녁 9시의 하늘

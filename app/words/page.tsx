@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
@@ -27,6 +28,7 @@ export default function WordsPage() {
         title="신화 속 단어"
         lead="일상에서 쓰는 말 가운데 신화에서 온 것들입니다. 흔히 퍼진 설명 가운데 근거가 약한 것도 있어 어원 상태를 함께 표시했습니다."
       />
+      <NadooAd inline />
       <div className="mt-4 flex flex-wrap gap-2 text-xs text-muted">
         {(Object.keys(WORD_STATUS_LABEL) as (keyof typeof WORD_STATUS_LABEL)[]).map((k) => (
           <StatusBadge key={k} status={k} />

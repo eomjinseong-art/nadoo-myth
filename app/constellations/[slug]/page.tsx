@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -85,6 +86,7 @@ export default async function ConstellationPage({ params }: { params: Promise<{ 
           </Link>
         </div>
       </section>
+      <NadooAd inline />
       <section className="mt-8">
         <h2 className="font-serif text-xl text-ink">찾는 법</h2>
         <p className="mt-1 text-xs text-muted">한국 중부(북위 약 37°, 서울 기준)에서 저녁 9시쯤. 도시 불빛에서는 3등보다 어두운 별이 잘 안 보입니다.</p>

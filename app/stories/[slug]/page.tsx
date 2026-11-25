@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -63,6 +64,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
           <PersonRefList refs={s.characters} />
         </p>
       </section>
+      <NadooAd inline />
       <Variants items={s.variants} />
       <ElsewhereBox links={s.elsewhere} />
       {relPaintings.length || relFilms.length ? (

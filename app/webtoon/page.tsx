@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
@@ -36,6 +37,7 @@ export default function WebtoonIndexPage() {
         title="웹툰"
         lead="그리스 신화를 세로로 넘기며 읽습니다. 대사는 짧게, 원전과 다른 곳은 편 아래에서 짚습니다."
       />
+      <NadooAd inline />
       <p className="mt-4 rounded-md border border-gold/40 bg-gold/5 px-3 py-2 text-sm leading-6 text-ink">
         열 편을 신화의 앞뒤대로 읽습니다. 그림은 이 페이지 안에서 그린 것이고, 아픈 순간은 화면 밖에 둡니다.
       </p>

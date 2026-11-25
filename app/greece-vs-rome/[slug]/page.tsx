@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -83,6 +84,7 @@ export default async function PairPage({ params }: { params: Promise<{ slug: str
         </table>
       </div>
 
+      <NadooAd inline />
       <section className="mt-8 rounded-md border border-rome/30 bg-rome/5 p-5">
         <h2 className="font-serif text-xl text-rome">로마는 무엇이 달랐나</h2>
         <div className="mt-3"><ClaimList claims={p.difference} /></div>
