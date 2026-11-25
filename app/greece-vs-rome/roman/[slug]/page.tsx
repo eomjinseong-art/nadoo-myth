@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -50,6 +51,7 @@ export default async function RomanPage({ params }: { params: Promise<{ slug: st
         <p className="mt-3 text-lg leading-8 text-ink">{r.lead}</p>
       </header>
       <div className="mt-4"><TagLegend /></div>
+      <NadooAd inline />
       <section className="mt-6 rounded-md border border-line bg-card p-5">
         <ClaimList claims={r.claims} />
       </section>

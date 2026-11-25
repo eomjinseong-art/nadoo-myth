@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ClaimList, TagLegend } from "@/components/ClaimList";
@@ -73,6 +74,7 @@ export default function HistoryPage() {
         </div>
       </section>
 
+      <NadooAd inline />
       <section className="mt-12">
         <h2 className="font-serif text-xl text-ink">연표</h2>
         <ol className="mt-4 border-l-2 border-gold/40 pl-5">

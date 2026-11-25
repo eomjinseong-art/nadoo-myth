@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
@@ -28,6 +29,7 @@ export default function GodsPage() {
         title="신과 인물"
         lead={`모두 ${people.length}명. 이름을 누르면 그리스어 이름, 로마 이름, 상징물, 가족관계, 등장하는 이야기와 원전 근거를 볼 수 있습니다. 카드의 그림은 그 상징을 모아 그린 초상 삽화입니다.`}
       />
+      <NadooAd inline />
       <nav className="mt-6 flex flex-wrap gap-2 text-sm">
         {CATEGORY_ORDER.map((cat) => (
           <a key={cat} href={`#${cat}`} className="rounded-full border border-line bg-card px-3 py-1 hover:border-gold hover:text-gold">

@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
@@ -47,6 +48,7 @@ export default async function WordPage({ params }: { params: Promise<{ slug: str
           <p key={i}>{para}</p>
         ))}
       </div>
+      <NadooAd inline />
       <dl className="mt-8 grid gap-x-6 gap-y-3 rounded-md border border-line bg-card p-4 text-sm sm:grid-cols-[7rem_1fr]">
         <dt className="text-muted">관련 인물</dt>
         <dd><PersonRefList refs={w.origin} empty="특정 인물 없음" /></dd>

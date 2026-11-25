@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { TagLegend } from "@/components/ClaimList";
 import { PageHead } from "@/components/PageHead";
@@ -64,6 +65,7 @@ export default function SourcesPage() {
           ))}
         </ul>
       </section>
+      <NadooAd inline />
       <section className="mt-8 rounded-md border border-line bg-card p-4">
         <h2 className="font-serif text-base text-ink">그리스 vs 로마 메뉴의 출처 표시</h2>
         <div className="mt-2"><TagLegend /></div>

@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHead } from "@/components/PageHead";
@@ -35,6 +36,7 @@ export default function SkyPage() {
         title="계절별 하늘 지도"
         lead="서울 기준(북위 37.5°, 동경 127°) 저녁 9시에 하늘을 올려다본 그림입니다. 원의 위가 북쪽, 왼쪽이 동쪽입니다. 이름을 누르면 그 별자리 성도로 갑니다."
       />
+      <NadooAd inline />
       <p className="mt-3 text-xs leading-6 text-muted">
         지평선 위에 떠 있는 이 사이트의 별자리만 이어 그렸습니다. 4등보다 밝은 별을 점으로 찍었고, 북극성은 길잡이로 따로 적었습니다. 같은 시각이라도 남쪽 해안은 남쪽 별이 조금 더 높이 뜹니다.
       </p>

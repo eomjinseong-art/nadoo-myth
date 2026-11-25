@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { TagLegend } from "@/components/ClaimList";
@@ -71,6 +72,7 @@ export default function GvrPage() {
         </div>
       </section>
 
+      <NadooAd inline />
       <section className="mt-12">
         <h2 className="font-serif text-2xl text-ink">로마에만 있던 신들</h2>
         <p className="mt-1 text-sm text-muted">그리스 신화에 딱 맞는 짝이 없는, 로마의 집과 국가를 지킨 신들입니다.</p>

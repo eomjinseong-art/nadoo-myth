@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
 import { Portrait } from "@/components/Portrait";
@@ -65,6 +66,7 @@ export default function Home() {
         ))}
       </section>
 
+      <NadooAd inline />
       <section className="mt-14">
         <div className="flex items-baseline justify-between gap-3">
           <h2 className="font-serif text-2xl text-ink">웹툰으로 읽기</h2>

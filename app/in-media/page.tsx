@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -61,6 +62,7 @@ export default function InMediaPage() {
         <OtherSiteFilms />
       </section>
 
+      <NadooAd inline />
       <section id="paintings" className="mt-14 scroll-mt-28">
         <h2 className="font-serif text-2xl text-ink">명화</h2>
         <p className="mt-1 text-xs text-muted">이미지는 모두 위키미디어 공용의 퍼블릭 도메인(또는 CC0) 파일입니다. 각 그림 아래 원본 링크를 달았습니다.</p>
