@@ -64,7 +64,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
           <PersonRefList refs={s.characters} />
         </p>
       </section>
-      <NadooAd inline />
+      <NadooAd inline types="lodge" />
       <Variants items={s.variants} />
       <ElsewhereBox links={s.elsewhere} />
       {relPaintings.length || relFilms.length ? (

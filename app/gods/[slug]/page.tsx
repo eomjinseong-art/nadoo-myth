@@ -136,7 +136,7 @@ export default async function PersonPage({ params }: { params: Promise<{ slug: s
         </div>
       </section>
 
-      <NadooAd inline />
+      <NadooAd inline types="lodge" />
       <Variants items={p.variants} />
 
       {relatedWords.length ? (
